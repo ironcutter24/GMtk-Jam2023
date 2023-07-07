@@ -20,9 +20,11 @@ public class HeroPawn : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => !isMoving);
             yield return new WaitForSeconds(1f);
             TryMove();
+            yield return new WaitUntil(() => !isMoving);
+
+            
         }
     }
 
