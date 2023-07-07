@@ -10,6 +10,22 @@ public class HeroPawn : MonoBehaviour
 
     bool isMoving = false;
 
+    private void Start()
+    {
+        transform.position = GameManager.Instance.HeroMapPosition;
+        StartCoroutine(_TestPath());
+    }
+
+    IEnumerator _TestPath()
+    {
+        while (true)
+        {
+            yield return new WaitUntil(() => !isMoving);
+            yield return new WaitForSeconds(1f);
+            TryMove();
+        }
+    }
+
     public void TryMove()
     {
         if (isMoving) return;
@@ -17,6 +33,7 @@ public class HeroPawn : MonoBehaviour
         isMoving = true;
         transform.DOMove(GetNextLocation().Pos, moveSpeed)
             .SetSpeedBased()
+            .SetEase(Ease.Linear)
             .OnComplete(() => isMoving = false);
     }
 
@@ -29,6 +46,7 @@ public class HeroPawn : MonoBehaviour
     private WorldLocation GetCurrentLocation()
     {
         var hits = Physics2D.OverlapCircleAll(transform.position, .1f);
+        
         foreach (var hit in hits)
         {
             var comp = hit.gameObject.GetComponent<WorldLocation>();
