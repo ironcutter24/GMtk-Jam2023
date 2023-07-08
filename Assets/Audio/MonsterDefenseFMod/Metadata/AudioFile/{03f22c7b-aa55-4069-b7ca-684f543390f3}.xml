@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{03f22c7b-aa55-4069-b7ca-684f543390f3}">
+		<property name="assetPath">
+			<value>Music/Map.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>58.331428571428575</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{299d37bc-5ac8-4712-a172-f467afb70dee}</destination>
+		</relationship>
+	</object>
+</objects>
