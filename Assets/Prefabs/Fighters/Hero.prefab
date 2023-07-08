@@ -147,7 +147,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 381358618086618951}
   specialAttackA: 3
   specialAttackB: 0
-  attackDamage: 2
   attackEventPath:
     Guid:
       Data1: 134426441
@@ -169,3 +168,13 @@ MonoBehaviour:
       Data3: 746793896
       Data4: 2077812686
     Path: event:/Hero/Hero_Special
+  maxHealth: 10
+  attackCooldown: 3
+  attackDamage: 2
+  healCooldown: 0.8
+  freezeCooldown: 0.4
+  poisonCooldown: 0.4
+  freezeTime: 1
+  poisonDamage: 1
+  poisonTurns: 3
+  poisonDelay: 1
