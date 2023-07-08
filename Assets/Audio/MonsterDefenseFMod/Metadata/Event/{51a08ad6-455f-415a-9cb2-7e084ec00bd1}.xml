@@ -61,7 +61,11 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{2820c057-2ee0-4399-a8c8-2f96c0301b9d}" />
 	<object class="MarkerTrack" id="{f3a8a09b-4a95-49f8-9f3e-ed6b9f940acb}" />
-	<object class="Timeline" id="{6523b84a-8a58-4068-a8be-62c19852ad20}" />
+	<object class="Timeline" id="{6523b84a-8a58-4068-a8be-62c19852ad20}">
+		<property name="isProxyEnabled">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="ActionSheet" id="{f1675041-5656-4dfd-8051-9d83652bb5ca}">
 		<relationship name="modules">
 			<destination>{a1ccaed3-da5a-4d4b-ae7a-ebe7047564b0}</destination>
@@ -96,6 +100,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{55148c21-5adb-46be-a659-b12f5b0d1938}" />
 	<object class="MultiSound" id="{3762f808-3b28-4245-be0b-a61d28e6645f}">
+		<property name="startOffset">
+			<value>18.5</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{a448934f-3dda-4df3-9420-ff75b642af9d}</destination>
 		</relationship>

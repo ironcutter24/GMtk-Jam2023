@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{2182cc07-7a6d-4e13-9842-b2cba8fc395f}">
+	<object class="AudioFile" id="{ed785981-a01e-4896-a501-5a66a2518e9f}">
 		<property name="assetPath">
 			<value>hero_hit_1.mp3</value>
 		</property>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>3.1608163265306124</value>
+			<value>2.6122448979591835</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{299d37bc-5ac8-4712-a172-f467afb70dee}</destination>
