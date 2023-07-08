@@ -14,6 +14,9 @@ public class EncounterManager : MonoBehaviour
     [SerializeField]
     Slider monsterHealthBar;
 
+    //[SerializeField]
+    //Slider monsterCooldownBar;
+
     [SerializeField]
     Hero hero;
     public Fighter Hero => hero;
@@ -29,6 +32,7 @@ public class EncounterManager : MonoBehaviour
         monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
         combatInput.monster = monster;
         monster.SetHealthBar(monsterHealthBar);
+        //monster.SetCooldownBar(monsterCooldownBar);
         monster.SetManager(this);
         hero.SetManager(this);
     }

@@ -9,14 +9,23 @@ public class Monster : Fighter
 {
     protected override Fighter Opponent => encounterManager.Hero;
 
+    //public void Awake()
+    //{
+    //    if (this.cooldownBar == null) {
+    //        this.cooldownBar = GameObject.FindGameObjectWithTag("MonsterCooldown").GetComponent<Slider>();
+    //    }
+    //}
+
     public void SetHealthBar(Slider bar)
     {
         healthBar = bar;
     }
+
 
     protected override void Death()
     {
         GameManager.Instance.Hero.SetHealth(Opponent.Health);
         GameManager.Instance.LoadWorldMap();
     }
+
 }
