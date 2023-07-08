@@ -14,6 +14,12 @@ public abstract class Fighter : MonoBehaviour
     protected const float attackMoveSpeedOut = 16f;
     protected EncounterManager encounterManager;
 
+    [Header("Audio")]
+    public EventReference attackEventPath;
+    public EventReference hurtEventPath;
+    public EventReference specialEventPath;
+
+    [Header("Components")]
     [SerializeField]
     protected Slider healthBar;
     [SerializeField]
@@ -24,37 +30,43 @@ public abstract class Fighter : MonoBehaviour
 
     public enum SpecialAttacks { None, Freeze, Poison, Block, Heal }
 
+    [Header("Stats")]
+    [SerializeField]
+    protected int maxHealth = 10;
+
     [SerializeField]
     protected SpecialAttacks specialAttackA = SpecialAttacks.None;
-
     [SerializeField]
     protected SpecialAttacks specialAttackB = SpecialAttacks.None;
 
 
-    private float currentCooldown = 0f;
-    private float cooldownTimer = 0f;
-    public bool IsCoolingDown => cooldownTimer > 0f;
-
-
-    public EventReference attackEventPath;
-    public EventReference hurtEventPath;
-    public EventReference specialEventPath;
-
     //Parameters that we can tweak on the individual fighters
-    [SerializeField]
-    protected int maxHealth = 10;
+
+    [Header("Attack")]
     [SerializeField]
     protected float attackCooldown = 3f;
     [SerializeField]
     protected int attackDamage = 1;
+
+    [Header("Block")]
+    [SerializeField]
+    protected float blockCooldown = .4f;
+
+    [Header("Healing")]
     [SerializeField]
     protected float healCooldown = .8f;
     [SerializeField]
+    protected int healAmount = 5;
+
+    [Header("Freeze attack")]
+    [SerializeField]
     protected float freezeCooldown = .4f;
     [SerializeField]
-    protected float poisonCooldown = .4f;
-    [SerializeField]
     protected float freezeTime = 1f;
+
+    [Header("Poison attack")]
+    [SerializeField]
+    protected float poisonCooldown = .4f;
     [SerializeField]
     protected int poisonDamage = 1;
     [SerializeField]
@@ -64,11 +76,15 @@ public abstract class Fighter : MonoBehaviour
 
     public int Health { get; protected set; }
 
+    private float currentCooldown = 0f;
+    private float cooldownTimer = 0f;
+    public bool IsCoolingDown => cooldownTimer > 0f;
 
     protected Vector3 startPos { get; private set; }
     public bool IsActing { get; protected set; }
 
     public bool IsDead => Health <= 0;
+    protected abstract void Death();
 
 
     protected virtual void Awake()
@@ -101,51 +117,8 @@ public abstract class Fighter : MonoBehaviour
         this.encounterManager = encounterManager;
     }
 
-    public void TakeDamage(int damage)
-    {
-        Health = Mathf.Max(0, Health - damage);
-        healthBar.value = Health / (float)maxHealth;
 
-        if (IsBlocking)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/FailedAttack");
-
-            return;
-        }
-
-        FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
-        transform.DOShakePosition(.3f, .5f, 30);
-        PlayHitVFX();
-
-        if (Health <= 0)
-            Death();
-    }
-
-    protected abstract void Death();
-
-    void PlayHitVFX()
-    {
-        var sequence = DOTween.Sequence();
-        sequence
-            .AppendCallback(() => SetHit(true))
-            .AppendInterval(.2f)
-            .AppendCallback(() => SetHit(false));
-
-        void SetHit(bool state) { spriteRenderer.material.SetFloat("_HitEffectBlend", state ? 1f : 0f); }
-    }
-
-    protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
-    {
-        float dist = Vector2.Distance(from, to);
-        Sequence attackTween = DOTween.Sequence();
-        attackTween
-            .Append(transform.DOMove(to, dist / attackMoveSpeedIn).SetEase(Ease.Linear))
-            .AppendCallback(() => OnReach())
-            .AppendInterval(hitStop)
-            .Append(transform.DOMove(from, dist / attackMoveSpeedOut))
-            .OnComplete(() => OnComplete());
-    }
-
+    #region Abilities
 
     public void SimpleAttack()
     {
@@ -161,7 +134,6 @@ public abstract class Fighter : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }
 
-    const float blockCooldown = .4f;
     public bool IsBlocking { get; private set; } = false;
     public void Block()
     {
@@ -175,37 +147,29 @@ public abstract class Fighter : MonoBehaviour
 
         void SetShineLocation(float val) { spriteRenderer.material.SetFloat("_ShineLocation", val); }
         FMODUnity.RuntimeManager.PlayOneShot("event:/PrepareBlock");
+    }
 
+    void Heal()
+    {
+        SetCooldown(healCooldown);
+        Health = Mathf.Clamp(Health + healAmount, 0, maxHealth);
     }
 
     public void SpecialAttackA()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
-
-        switch (specialAttackA)
-        {
-            case SpecialAttacks.Freeze:
-                SetCooldown(freezeCooldown);
-                Opponent.ApplyFreeze();
-                break;
-            case SpecialAttacks.Poison:
-                SetCooldown(poisonCooldown);
-                Opponent.ApplyPoison();
-                break;
-            case SpecialAttacks.Block:
-                SetCooldown(blockCooldown);
-                break;
-            case SpecialAttacks.Heal:
-                SetCooldown(healCooldown);
-                break;
-        }
+        ApplySpecialAttack(specialAttackA);
     }
 
     public void SpecialAttackB()
     {
+        ApplySpecialAttack(specialAttackB);
+    }
+
+    void ApplySpecialAttack(SpecialAttacks attackType)
+    {
         FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
 
-        switch (specialAttackB)
+        switch (attackType)
         {
             case SpecialAttacks.Freeze:
                 SetCooldown(freezeCooldown);
@@ -216,13 +180,18 @@ public abstract class Fighter : MonoBehaviour
                 Opponent.ApplyPoison();
                 break;
             case SpecialAttacks.Block:
-                SetCooldown(blockCooldown);
+                Block();
                 break;
             case SpecialAttacks.Heal:
-                SetCooldown(healCooldown);
+                Heal();
                 break;
         }
     }
+
+    #endregion
+
+
+    #region Status Effects
 
     Timer frozenTimer = new Timer();
     public bool IsFrozen => !frozenTimer.IsExpired;
@@ -251,4 +220,49 @@ public abstract class Fighter : MonoBehaviour
         }
     }
 
+    #endregion
+
+
+    public void TakeDamage(int damage)
+    {
+        Health = Mathf.Max(0, Health - damage);
+        healthBar.value = Health / (float)maxHealth;
+
+        if (IsBlocking)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/FailedAttack");
+
+            return;
+        }
+
+        FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
+        transform.DOShakePosition(.3f, .5f, 30);
+        PlayHitVFX();
+
+        if (Health <= 0)
+            Death();
+    }
+
+    protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
+    {
+        float dist = Vector2.Distance(from, to);
+        Sequence attackTween = DOTween.Sequence();
+        attackTween
+            .Append(transform.DOMove(to, dist / attackMoveSpeedIn).SetEase(Ease.Linear))
+            .AppendCallback(() => OnReach())
+            .AppendInterval(hitStop)
+            .Append(transform.DOMove(from, dist / attackMoveSpeedOut))
+            .OnComplete(() => OnComplete());
+    }
+
+    void PlayHitVFX()
+    {
+        var sequence = DOTween.Sequence();
+        sequence
+            .AppendCallback(() => SetHit(true))
+            .AppendInterval(.2f)
+            .AppendCallback(() => SetHit(false));
+
+        void SetHit(bool state) { spriteRenderer.material.SetFloat("_HitEffectBlend", state ? 1f : 0f); }
+    }
 }
