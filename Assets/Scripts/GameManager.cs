@@ -44,6 +44,10 @@ public class GameManager : Singleton<GameManager>
         private int health;
         public int Health => health;
 
+        [SerializeField]
+        private int attackDamage;
+        public int AttackDamage => attackDamage;
+
         public HeroData()
         {
             health = MaxHealth;
@@ -52,6 +56,16 @@ public class GameManager : Singleton<GameManager>
         public void SetHealth(int val)
         {
             health = val;
+        }
+
+        public void RestoreHealth(int val)
+        {
+            health = Mathf.Clamp(health + val, 0, MaxHealth);
+        }
+
+        public void IncreaseAttackDamage(int amount)
+        {
+            attackDamage += amount;
         }
 
         public void SetMapPosition(Vector2 pos)

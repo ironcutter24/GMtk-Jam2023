@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility.Time;
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -35,6 +36,11 @@ public abstract class Fighter : MonoBehaviour
         startPos = transform.position;
     }
 
+    private void Start()
+    {
+        healthBar.value = Health / (float)maxHealth;
+    }
+
     public void SetManager(EncounterManager encounterManager)
     {
         this.encounterManager = encounterManager;
@@ -56,6 +62,9 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
+
+        if (Health <= 0)
+            Death();
     }
 
     protected abstract void Death();
@@ -70,5 +79,42 @@ public abstract class Fighter : MonoBehaviour
             .AppendInterval(hitStop)
             .Append(transform.DOMove(from, dist / attackMoveSpeedOut))
             .OnComplete(() => OnComplete());
+    }
+
+
+
+    Timer frozenTimer = new Timer();
+    public bool IsFrozen => frozenTimer.IsExpired;
+    public void ApplyFreeze()
+    {
+        frozenTimer.Set(1f);
+    }
+
+
+    public bool IsPoisoned { get; private set; } = false;
+    public void ApplyPoison()
+    {
+        StartCoroutine(_PoisonStatus());
+
+        IEnumerator _PoisonStatus()
+        {
+            IsPoisoned = true;
+
+            for (int i = 0; i < 3; i++)
+            {
+                yield return new WaitForSeconds(1f);
+                TakeDamage(1);
+            }
+
+            IsPoisoned = false;
+        }
+    }
+
+
+    Timer blockignTimer = new Timer();
+    public bool IsBlocking { get; private set; } = false;
+    public void ApplyBlocking()
+    {
+        blockignTimer.Set(1f);
     }
 }

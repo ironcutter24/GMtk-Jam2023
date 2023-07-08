@@ -23,7 +23,7 @@ public class CombatLocation : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, .4f);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere(transform.position, .2f);
     }
 }

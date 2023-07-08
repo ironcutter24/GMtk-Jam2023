@@ -16,8 +16,6 @@ public class Monster : Fighter
 
     protected override void Death()
     {
-        // To map scene
-
         GameManager.Instance.Hero.SetHealth(Opponent.Health);
         GameManager.Instance.LoadWorldMap();
     }

@@ -43,6 +43,12 @@ public class HeroPawn : MonoBehaviour
                 combatLocation.InitBattle();
                 yield break;
             }
+
+            var powerupLocation = GetCurrentLocation().GetComponent<PowerupLocation>();
+            if (powerupLocation)
+            {
+                powerupLocation.UpdateHeroStatus();
+            }
         }
     }
 
