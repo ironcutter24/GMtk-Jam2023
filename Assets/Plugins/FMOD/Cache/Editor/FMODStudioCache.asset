@@ -255,14 +255,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Hero/Hero_Special
+  m_Name: event:/Hero/Hero_Hit
   m_EditorClassIdentifier: 
-  Path: event:/Hero/Hero_Special
+  Path: event:/Hero/Hero_Hit
   Guid:
-    Data1: -1164548580
-    Data2: 1225907226
-    Data3: 746793896
-    Data4: 2077812686
+    Data1: 318422247
+    Data2: 1103211585
+    Data3: 1295283117
+    Data4: -2138167468
   Banks:
   - {fileID: 1749993898188859218}
   IsStream: 0

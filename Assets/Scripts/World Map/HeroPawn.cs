@@ -39,7 +39,7 @@ public class HeroPawn : MonoBehaviour
                 while (true)
                 {
                     yield return null;
-                    if (Input.GetKeyDown(KeyCode.Space))
+                    if (Input.anyKeyDown)
                         break;
                 }
 
