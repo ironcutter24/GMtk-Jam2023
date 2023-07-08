@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Monster currentOpponent;
     public Monster CurrentOpponent => currentOpponent;
+    public MusicManager musicManager;
 
     [SerializeField]
     private HeroData hero = new HeroData();
@@ -32,11 +33,13 @@ public class GameManager : Singleton<GameManager>
     public void LoadBattleWith(Monster opponent)
     {
         currentOpponent = opponent;
+        MusicManager.Instance.musicEvent.setParameterByNameWithLabel("CurrentScreen", "Combat");
         SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
     }
 
     public void LoadWorldMap()
     {
+        MusicManager.Instance.musicEvent.setParameterByNameWithLabel("CurrentScreen", "Map");
         SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
     }
 

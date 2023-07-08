@@ -1852,6 +1852,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2099702303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099702305}
+  - component: {fileID: 2099702304}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2099702304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099702303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abe70db9cd4d4b1cac2689e0da0ab0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: event:/BackgroundMusic
+--- !u!4 &2099702305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099702303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3651750178654136445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1918,6 +1963,46 @@ PrefabInstance:
     - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
       propertyPath: attackEventPath
       value: event:/Hero/Hero_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Path
+      value: event:/Hero/Hero_Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Path
+      value: event:/Hero/Hero_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data1
+      value: 318422247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data2
+      value: 1103211585
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data3
+      value: 1295283117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data4
+      value: -2138167468
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data1
+      value: 134426441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data2
+      value: 1155616921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data3
+      value: -1703588430
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data4
+      value: 1468857699
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
