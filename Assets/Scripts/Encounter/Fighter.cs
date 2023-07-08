@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility.Time;
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -16,7 +17,15 @@ public abstract class Fighter : MonoBehaviour
     protected Slider healthBar;
 
     [SerializeField]
+    protected Slider cooldownBar;
+
+    [SerializeField]
     protected int attackDamage = 1;
+
+    [SerializeField]
+    protected float attackCoolDown = 3f;
+    //protected bool onCoolDown = false;
+    public float coolDownRemaining;
 
     protected const int maxHealth = 10;
     protected int Health { get; private set; }
@@ -70,5 +79,23 @@ public abstract class Fighter : MonoBehaviour
             .AppendInterval(hitStop)
             .Append(transform.DOMove(from, dist / attackMoveSpeedOut))
             .OnComplete(() => OnComplete());
+    }
+
+    protected void startCoolDown(float coolDownTime) {
+        cooldownBar.maxValue = coolDownTime;
+        cooldownBar.value = coolDownTime;
+        coolDownRemaining = coolDownTime;
+        IsActing = false;
+    }
+
+    private void Update()
+    {
+        if (!IsActing) {
+            coolDownRemaining = Mathf.Clamp(coolDownRemaining - Time.deltaTime, 0, cooldownBar.maxValue);
+            cooldownBar.value = coolDownRemaining;
+            if (coolDownRemaining <= 0) {
+                IsActing = true;
+            }
+        }
     }
 }

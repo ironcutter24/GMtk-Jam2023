@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : Fighter
 {
@@ -8,6 +9,13 @@ public class Hero : Fighter
 
 
     // Hero AI
+
+    private void Awake()
+    {
+        if (this.cooldownBar == null) {
+            this.cooldownBar = GameObject.FindGameObjectWithTag("HeroCooldown").GetComponent<Slider>();
+        }
+    }
 
     public IEnumerator _PerformAITurn()
     {
