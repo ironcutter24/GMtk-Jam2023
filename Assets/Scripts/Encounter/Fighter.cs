@@ -108,7 +108,7 @@ public abstract class Fighter : MonoBehaviour
 
         if (IsBlocking)
         {
-            // Play block sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/FailedAttack");
 
             return;
         }
@@ -174,6 +174,8 @@ public abstract class Fighter : MonoBehaviour
             .OnComplete(() => IsBlocking = false);
 
         void SetShineLocation(float val) { spriteRenderer.material.SetFloat("_ShineLocation", val); }
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PrepareBlock");
+
     }
 
     public void SpecialAttackA()
