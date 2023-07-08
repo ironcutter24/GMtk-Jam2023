@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2471e7bd-22e0-46fe-88e3-2ef127127f7a}">
+		<property name="assetPath">
+			<value>fog_attack_1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0897959183673471</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{299d37bc-5ac8-4712-a172-f467afb70dee}</destination>
+		</relationship>
+	</object>
+</objects>

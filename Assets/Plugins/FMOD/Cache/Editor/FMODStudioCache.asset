@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244148977974137
+  lastModified: 638244220463250486
   FileSizes:
   - Name: Desktop
-    Value: 1600
+    Value: 1692
   Exists: 1
 --- !u!114 &-7968536650265832846
 MonoBehaviour:
@@ -41,6 +41,33 @@ MonoBehaviour:
   Banks:
   - {fileID: -4662118793665963932}
   IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7730605933436570106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HealthPickup
+  m_EditorClassIdentifier: 
+  Path: event:/HealthPickup
+  Guid:
+    Data1: 357104689
+    Data2: 1140535105
+    Data3: 566866836
+    Data4: 2073863165
+  Banks:
+  - {fileID: -4662118793665963932}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -170,10 +197,10 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638244148980118637
+  lastModified: 638244220468347594
   FileSizes:
   - Name: Desktop
-    Value: 235840
+    Value: 430912
   Exists: 1
 --- !u!114 &-4303620635728426472
 MonoBehaviour:
@@ -190,7 +217,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244148977959624
+  lastModified: 638244220463232832
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -337,12 +364,14 @@ MonoBehaviour:
   - {fileID: 6347084888531940745}
   - {fileID: -6708362066837021634}
   - {fileID: 213067878941158857}
+  - {fileID: -7730605933436570106}
+  - {fileID: 7215445731225872829}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4303620635728426472}
   StringsBanks:
   - {fileID: -8516403954840797874}
-  cacheTime: 638244148980118637
+  cacheTime: 638244220468347594
   cacheVersion: 131603
 --- !u!114 &213067878941158857
 MonoBehaviour:
@@ -560,6 +589,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7215445731225872829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PowerUp
+  m_EditorClassIdentifier: 
+  Path: event:/PowerUp
+  Guid:
+    Data1: 1472612260
+    Data2: 1138010036
+    Data3: 1084547730
+    Data4: 221644674
+  Banks:
+  - {fileID: -4662118793665963932}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8386990579745653856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +631,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244148978304789
+  lastModified: 638244220465424080
   FileSizes:
   - Name: Desktop
     Value: 1358560
