@@ -10,12 +10,12 @@ public class Hero : Fighter
 
     // Hero AI
 
-    private void Awake()
-    {
-        if (this.cooldownBar == null) {
-            this.cooldownBar = GameObject.FindGameObjectWithTag("HeroCooldown").GetComponent<Slider>();
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (this.cooldownBar == null) {
+    //        this.cooldownBar = GameObject.FindGameObjectWithTag("HeroCooldown").GetComponent<Slider>();
+    //    }
+    //}
 
     public IEnumerator _PerformAITurn()
     {

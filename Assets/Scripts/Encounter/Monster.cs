@@ -21,7 +21,7 @@ public class Monster : Fighter
         healthBar = bar;
     }
 
-    public void SetCooldownBar(Slider bar) {
-        cooldownBar = bar;
-    }
+    //public void SetCooldownBar(Slider bar) {
+    //    cooldownBar = bar;
+    //}
 }

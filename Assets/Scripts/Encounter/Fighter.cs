@@ -16,16 +16,22 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField]
     protected Slider healthBar;
 
-    [SerializeField]
-    protected Slider cooldownBar;
+    //[SerializeField]
+    //protected Slider cooldownBar;
 
     [SerializeField]
     protected int attackDamage = 1;
 
-    [SerializeField]
-    protected float attackCoolDown = 3f;
+    [FMODUnity.EventRef]
+    public string attackEventPath;
+
+    [FMODUnity.EventRef]
+    public string hurtEventPath;
+
+    //[SerializeField]
+    //protected float attackCoolDown = 3f;
     //protected bool onCoolDown = false;
-    public float coolDownRemaining;
+    //public float coolDownRemaining;
 
     protected const int maxHealth = 10;
     protected int Health { get; private set; }
@@ -54,14 +60,16 @@ public abstract class Fighter : MonoBehaviour
 
         Vector3 targetPos = Opponent.transform.position;
         MoveToEnemy(startPos, targetPos, .1f,
-            () => Opponent.TakeDamage(attackDamage),
+            () => Opponent.TakeDamage(attackDamage, Opponent.hurtEventPath),
             () => IsActing = false);
+        FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, string hurtSound)
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
+        FMODUnity.RuntimeManager.PlayOneShot(hurtSound, gameObject.transform.position);
 
         if (Health <= 0)
         {
@@ -81,21 +89,21 @@ public abstract class Fighter : MonoBehaviour
             .OnComplete(() => OnComplete());
     }
 
-    protected void startCoolDown(float coolDownTime) {
-        cooldownBar.maxValue = coolDownTime;
-        cooldownBar.value = coolDownTime;
-        coolDownRemaining = coolDownTime;
-        IsActing = false;
-    }
+    //protected void startCoolDown(float coolDownTime) {
+    //    cooldownBar.maxValue = coolDownTime;
+    //    cooldownBar.value = coolDownTime;
+    //    coolDownRemaining = coolDownTime;
+    //    IsActing = false;
+    //}
 
-    private void Update()
-    {
-        if (!IsActing) {
-            coolDownRemaining = Mathf.Clamp(coolDownRemaining - Time.deltaTime, 0, cooldownBar.maxValue);
-            cooldownBar.value = coolDownRemaining;
-            if (coolDownRemaining <= 0) {
-                IsActing = true;
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    if (!IsActing) {
+    //        coolDownRemaining = Mathf.Clamp(coolDownRemaining - Time.deltaTime, 0, cooldownBar.maxValue);
+    //        cooldownBar.value = coolDownRemaining;
+    //        if (coolDownRemaining <= 0) {
+    //            IsActing = true;
+    //        }
+    //    }
+    //}
 }
