@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8dc232ffa41984b80c3437fd7fdf6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentOpponent: {fileID: 0}
+  hero:
+    MaxHealth: 10
+    health: 10
+    mapPosition: {x: -7, y: 3}
