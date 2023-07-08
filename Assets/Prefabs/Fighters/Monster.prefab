@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  cooldownBar: {fileID: 0}
+  spriteRenderer: {fileID: 4300869743774583596}
   specialAttackA: 0
   specialAttackB: 0
   attackDamage: 1
