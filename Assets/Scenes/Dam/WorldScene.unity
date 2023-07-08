@@ -1001,6 +1001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeroPawn
       objectReference: {fileID: 0}
+    - target: {fileID: 5297555693405232541, guid: 5ec8a9c0c716b95468ebe4f44116bd96, type: 3}
+      propertyPath: continueText
+      value: 
+      objectReference: {fileID: 509663979}
     - target: {fileID: 5297555693405232542, guid: 5ec8a9c0c716b95468ebe4f44116bd96, type: 3}
       propertyPath: m_RootOrder
       value: 3

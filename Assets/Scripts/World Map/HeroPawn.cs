@@ -2,6 +2,8 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class HeroPawn : MonoBehaviour
 {
@@ -12,11 +14,13 @@ public class HeroPawn : MonoBehaviour
     float moveSpeed = 2f;
 
     bool isMoving = false;
+    public TextMeshProUGUI continueText;
 
     private void Start()
     {
         transform.position = GameManager.Instance.Hero.MapPosition;
         StartCoroutine(_TestPath());
+        continueText.gameObject.SetActive(false);
     }
 
     IEnumerator _TestPath()
@@ -31,7 +35,7 @@ public class HeroPawn : MonoBehaviour
             if (combatLocation)
             {
                 PlayReadyAnimation();
-
+                continueText.gameObject.SetActive(true);
                 while (true)
                 {
                     yield return null;
@@ -73,7 +77,13 @@ public class HeroPawn : MonoBehaviour
     private WorldLocation GetNextLocation()
     {
         var targetLocations = GetCurrentLocation().Children;
-        return targetLocations[Random.Range(0, targetLocations.Count)];
+        if (targetLocations.Count > 0)
+        {
+            return targetLocations[Random.Range(0, targetLocations.Count)];
+        }
+        else {
+            return null;
+        }
     }
 
     private WorldLocation GetCurrentLocation()
