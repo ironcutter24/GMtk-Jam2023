@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using Utility.Patterns;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
+
 
     private void Start()
     {
@@ -74,11 +76,13 @@ public class GameManager : Singleton<GameManager>
         public void RestoreHealth(int val)
         {
             health = Mathf.Clamp(health + val, 0, MaxHealth);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/HealthPickup");
         }
 
         public void IncreaseAttackDamage(int amount)
         {
             attackDamage += amount;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PowerUp");
         }
 
         public void SetMapPosition(Vector2 pos)
