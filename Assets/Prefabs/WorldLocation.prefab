@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a67466de6ac1d4a81004e5e5723dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathSegmentPrefab: {fileID: 6487782563853943693, guid: 474dc9a9fb154324099d5b2e3dd8e3e5, type: 3}
   children: []
 --- !u!1 &8925106722461826185
 GameObject:
@@ -84,7 +85,7 @@ GameObject:
   - component: {fileID: 1531807451180599605}
   - component: {fileID: 6225645838645541974}
   m_Layer: 0
-  m_Name: Square
+  m_Name: NodeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

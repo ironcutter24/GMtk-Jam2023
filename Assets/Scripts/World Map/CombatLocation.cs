@@ -11,4 +11,10 @@ public class CombatLocation : MonoBehaviour
     {
         GameManager.Instance.LoadBattleWith(opponent);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, .4f);
+    }
 }
