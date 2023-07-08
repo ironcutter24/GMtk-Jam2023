@@ -16,17 +16,20 @@ public abstract class Fighter : MonoBehaviour
 
     [SerializeField]
     protected Slider healthBar;
+    [SerializeField]
+    protected Slider cooldownBar;
+
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
     public enum SpecialAttacks { None, Freeze, Poison, Block, Heal }
 
     [SerializeField]
-    SpecialAttacks specialAttackA = SpecialAttacks.None;
+    protected SpecialAttacks specialAttackA = SpecialAttacks.None;
 
     [SerializeField]
-    SpecialAttacks specialAttackB = SpecialAttacks.None;
+    protected SpecialAttacks specialAttackB = SpecialAttacks.None;
 
-    //[SerializeField]
-    //protected Slider cooldownBar;
 
     [SerializeField]
     protected int attackDamage = 1;
@@ -36,19 +39,13 @@ public abstract class Fighter : MonoBehaviour
     public bool IsCoolingDown => cooldownTimer > 0f;
 
 
-
     public EventReference attackEventPath;
     public EventReference hurtEventPath;
     public EventReference specialEventPath;
 
-    //[SerializeField]
-    //protected float attackCoolDown = 3f;
-    //protected bool onCoolDown = false;
-    //public float coolDownRemaining;
 
     protected const int maxHealth = 10;
     public int Health { get; protected set; }
-
 
 
     protected Vector3 startPos { get; private set; }
@@ -63,7 +60,7 @@ public abstract class Fighter : MonoBehaviour
         startPos = transform.position;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         healthBar.value = Health / (float)maxHealth;
     }
@@ -73,6 +70,7 @@ public abstract class Fighter : MonoBehaviour
         if (!IsFrozen)
         {
             cooldownTimer -= Time.deltaTime;
+            cooldownBar.value = cooldownTimer / currentCooldown;
         }
     }
 
@@ -90,11 +88,14 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
+        
+        FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
+        transform.DOShakePosition(.3f, .5f, 30);
+        //spriteRenderer.material.SetFloat("HITEFFECT_ON", 1f);
+
 
         if (Health <= 0)
             Death();
-
-        FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
     }
 
     protected abstract void Death();
@@ -129,7 +130,33 @@ public abstract class Fighter : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }
 
+    public void Block()
+    {
+
+    }
+
     public void SpecialAttackA()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
+
+        switch (specialAttackA)
+        {
+            case SpecialAttacks.Freeze:
+                SetCooldown(freezeCooldown);
+                break;
+            case SpecialAttacks.Poison:
+                SetCooldown(poisonCooldown);
+                break;
+            case SpecialAttacks.Block:
+                SetCooldown(blockCooldown);
+                break;
+            case SpecialAttacks.Heal:
+                SetCooldown(healCooldown);
+                break;
+        }
+    }
+
+    public void SpecialAttackB()
     {
         FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
 

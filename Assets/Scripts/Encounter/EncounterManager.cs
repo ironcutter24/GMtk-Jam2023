@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +15,8 @@ public class EncounterManager : MonoBehaviour
     [SerializeField]
     Slider monsterHealthBar;
 
-    //[SerializeField]
-    //Slider monsterCooldownBar;
+    [SerializeField]
+    Slider monsterCooldownBar;
 
     [SerializeField]
     Hero hero;
@@ -33,8 +34,7 @@ public class EncounterManager : MonoBehaviour
     {
         monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
         combatInput.monster = monster;
-        monster.SetHealthBar(monsterHealthBar);
-        //monster.SetCooldownBar(monsterCooldownBar);
+        monster.SetBars(monsterHealthBar, monsterCooldownBar);
         monster.SetManager(this);
         hero.SetManager(this);
     }
@@ -54,6 +54,14 @@ public class EncounterManager : MonoBehaviour
         {
             hero.SimpleAttack();
         }
+    }
+
+    public void SetSpecialAttacksUI(Fighter.SpecialAttacks A, Fighter.SpecialAttacks B)
+    {
+        combatInput.specialButtonA.GetComponentInChildren<TextMeshProUGUI>().text = A.ToString();
+
+        combatInput.specialButtonB.GetComponentInChildren<TextMeshProUGUI>().text = B.ToString();
+        combatInput.specialButtonB.gameObject.SetActive(B != Fighter.SpecialAttacks.None);
     }
 
     IEnumerator _TestFight()
