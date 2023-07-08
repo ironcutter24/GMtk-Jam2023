@@ -178,6 +178,9 @@ public abstract class Fighter : MonoBehaviour
             case SpecialAttacks.Poison:
                 SetCooldown(poisonCooldown);
                 Opponent.ApplyPoison();
+
+                DOTween.To(() => 0f, (x) => spriteRenderer.material.SetFloat("_HsvShift", x), 360f, 1.2f);
+
                 break;
             case SpecialAttacks.Block:
                 Block();
@@ -213,11 +216,17 @@ public abstract class Fighter : MonoBehaviour
             for (int i = 0; i < poisonTurns; i++)
             {
                 yield return new WaitForSeconds(poisonDelay);
+
+                DOTween.To(() => 0f, (x) => SetDistorsion(x), .5f, .8f)
+                    .SetLoops(1, LoopType.Yoyo);
+
                 TakeDamage(poisonDamage);
             }
 
             IsPoisoned = false;
         }
+
+        void SetDistorsion(float val) { spriteRenderer.material.SetFloat("_DistortAmoun", val); }
     }
 
     #endregion
