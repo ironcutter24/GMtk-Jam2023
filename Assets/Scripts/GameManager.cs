@@ -14,9 +14,19 @@ public class GameManager : Singleton<GameManager>
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
 
-    void Start()
+    private void Start()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        Debug.Log("Hero health: " + hero.Health);
     }
 
     public void LoadBattleWith(Monster opponent)
@@ -55,7 +65,7 @@ public class GameManager : Singleton<GameManager>
 
         public void SetHealth(int val)
         {
-            health = val;
+            health = Mathf.Clamp(val, 0, MaxHealth);
         }
 
         public void RestoreHealth(int val)

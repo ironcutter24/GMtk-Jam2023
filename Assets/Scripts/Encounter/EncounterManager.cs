@@ -42,6 +42,17 @@ public class EncounterManager : MonoBehaviour
         StartCoroutine(_TestFight());
     }
 
+    IEnumerator _AsyncFight()
+    {
+        while (true)
+        {
+            if (!hero.IsActing && !monster.IsActing)
+            {
+
+            }
+        }
+    }
+
     IEnumerator _TestFight()
     {
         yield return new WaitForSeconds(1.2f);

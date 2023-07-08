@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,14 +24,9 @@ public abstract class Fighter : MonoBehaviour
 	protected int attackDamage = 1;
 
 
-	[FMODUnity.EventRef]
-	public string attackEventPath;
-
-	[FMODUnity.EventRef]
-	public string hurtEventPath;
-
-	[FMODUnity.EventRef]
-	public string specialEventPath;
+	public EventReference attackEventPath;
+	public EventReference hurtEventPath;
+	public EventReference specialEventPath;
 
 	//[SerializeField]
 	//protected float attackCoolDown = 3f;
@@ -38,7 +34,7 @@ public abstract class Fighter : MonoBehaviour
 	//public float coolDownRemaining;
 
 	protected const int maxHealth = 10;
-	public int Health { get; private set; }
+	public int Health { get; protected set; }
 
 
 
@@ -108,6 +104,8 @@ public abstract class Fighter : MonoBehaviour
 
 
 
+
+	float freezeCooldown = .4f;
 	Timer frozenTimer = new Timer();
 	public bool IsFrozen => frozenTimer.IsExpired;
 	public void ApplyFreeze()
@@ -116,6 +114,7 @@ public abstract class Fighter : MonoBehaviour
 	}
 
 
+	float poisonCooldown = .4f;
 	public bool IsPoisoned { get; private set; } = false;
 	public void ApplyPoison()
 	{
@@ -136,6 +135,7 @@ public abstract class Fighter : MonoBehaviour
 	}
 
 
+	float blockCooldown = .4f;
 	Timer blockignTimer = new Timer();
 	public bool IsBlocking { get; private set; } = false;
 	public void ApplyBlocking()

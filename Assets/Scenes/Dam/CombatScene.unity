@@ -1272,7 +1272,6 @@ MonoBehaviour:
   combatInput: {fileID: 1782971680}
   monsterStartPos: {fileID: 331022985}
   monsterHealthBar: {fileID: 333624232}
-  monsterCooldownBar: {fileID: 17190960}
   hero: {fileID: 3651750178654136446}
 --- !u!4 &1042542124
 Transform:

@@ -10,7 +10,7 @@ public class Hero : Fighter
     protected override void Awake()
     {
         base.Awake();
-        GameManager.Instance.Hero.SetHealth(Health);
+        Health = GameManager.Instance.Hero.Health;
     }
 
     // Hero AI
