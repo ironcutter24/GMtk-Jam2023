@@ -13,4 +13,12 @@ public class Monster : Fighter
     {
         healthBar = bar;
     }
+
+    protected override void Death()
+    {
+        // To map scene
+
+        GameManager.Instance.Hero.SetHealth(Opponent.Health);
+        GameManager.Instance.LoadWorldMap();
+    }
 }

@@ -48,7 +48,6 @@ public class EncounterManager : MonoBehaviour
             {
                 // Player turn
                 yield return _WaitForPlayerTurn();
-
                 turnOwner = TurnOwner.Hero;
             }
             else

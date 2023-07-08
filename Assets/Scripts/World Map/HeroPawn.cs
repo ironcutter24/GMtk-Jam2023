@@ -15,7 +15,7 @@ public class HeroPawn : MonoBehaviour
 
     private void Start()
     {
-        transform.position = GameManager.Instance.HeroMapPosition;
+        transform.position = GameManager.Instance.Hero.MapPosition;
         StartCoroutine(_TestPath());
     }
 
@@ -39,7 +39,7 @@ public class HeroPawn : MonoBehaviour
                         break;
                 }
 
-                GameManager.Instance.StoreHeroPosition(transform.position);
+                GameManager.Instance.Hero.SetMapPosition(transform.position);
                 combatLocation.InitBattle();
                 yield break;
             }
