@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f80b6247-8e04-4c75-9b63-d42efc88bf9f}">
+		<property name="assetPath">
+			<value>poison_special_1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.899591836734694</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{299d37bc-5ac8-4712-a172-f467afb70dee}</destination>
+		</relationship>
+	</object>
+</objects>
