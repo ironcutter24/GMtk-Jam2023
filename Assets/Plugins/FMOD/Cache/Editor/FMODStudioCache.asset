@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244118489427302
+  lastModified: 638244135406861766
   FileSizes:
   - Name: Desktop
     Value: 1600
@@ -118,12 +118,12 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 353949603
     data2: 1471995180
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Map
   - Combat
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638244118505582206
+  lastModified: 638244135407490034
   FileSizes:
   - Name: Desktop
     Value: 235840
@@ -190,10 +190,10 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244118489416106
+  lastModified: 638244135406839766
   FileSizes:
   - Name: Desktop
-    Value: 1242
+    Value: 1036
   Exists: 1
 --- !u!114 &-3650795611443052797
 MonoBehaviour:
@@ -337,13 +337,12 @@ MonoBehaviour:
   - {fileID: 6347084888531940745}
   - {fileID: -6708362066837021634}
   - {fileID: 213067878941158857}
-  EditorParameters:
-  - {fileID: 2649297225835400050}
+  EditorParameters: []
   MasterBanks:
   - {fileID: -4303620635728426472}
   StringsBanks:
   - {fileID: -8516403954840797874}
-  cacheTime: 638244128883698545
+  cacheTime: 638244135407490034
   cacheVersion: 131603
 --- !u!114 &213067878941158857
 MonoBehaviour:
@@ -507,32 +506,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2649297225835400050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/CurrentScreen
-  m_EditorClassIdentifier: 
-  Name: CurrentScreen
-  StudioPath: parameter:/CurrentScreen
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 353949603
-    data2: 1471995180
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Map
-  - Combat
-  Exists: 1
 --- !u!114 &3396090054469702112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,8 +575,8 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244128883698545
+  lastModified: 638244135407076575
   FileSizes:
   - Name: Desktop
-    Value: 1358624
+    Value: 1358560
   Exists: 1

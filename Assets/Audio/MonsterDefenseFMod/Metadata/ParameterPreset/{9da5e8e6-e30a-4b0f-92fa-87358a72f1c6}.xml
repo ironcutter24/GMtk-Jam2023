@@ -22,11 +22,8 @@
 			<value>Map</value>
 			<value>Combat</value>
 		</property>
-		<property name="isGlobal">
-			<value>true</value>
-		</property>
 		<property name="initialValue">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<property name="isExposedRecursively">
 			<value>false</value>

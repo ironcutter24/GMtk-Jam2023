@@ -1964,6 +1964,46 @@ PrefabInstance:
       propertyPath: attackEventPath
       value: event:/Hero/Hero_Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Path
+      value: event:/Hero/Hero_Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Path
+      value: event:/Hero/Hero_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data1
+      value: 318422247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data2
+      value: 1103211585
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data3
+      value: 1295283117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: hurtEventPath.Guid.Data4
+      value: -2138167468
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data1
+      value: 134426441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data2
+      value: 1155616921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data3
+      value: -1703588430
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018960700029400512, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
+      propertyPath: attackEventPath.Guid.Data4
+      value: 1468857699
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3af47071f9e934383295d7c1d158cb, type: 3}
 --- !u!114 &3651750178654136446 stripped
