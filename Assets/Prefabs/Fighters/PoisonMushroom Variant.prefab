@@ -51,6 +51,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Path
+      value: event:/Monsters/Fog/Fog_Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Path
+      value: event:/Monsters/Fog/Fog_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Path
+      value: event:/Monsters/Fog/Fog_Special
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data1
+      value: -851068162
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data2
+      value: 1262910011
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data3
+      value: 942561932
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data4
+      value: -989901071
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data1
+      value: -1828826620
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data2
+      value: 1078570270
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data3
+      value: 1467786651
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data4
+      value: -2089867733
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data1
+      value: -1935437923
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data2
+      value: 1273460492
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data3
+      value: -142869869
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data4
+      value: -2017912473
+      objectReference: {fileID: 0}
     - target: {fileID: 4300869743774583596, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -73,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8636238502841503335, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: m_Name
-      value: PoisonMushroom
+      value: PoisonMushroom Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}

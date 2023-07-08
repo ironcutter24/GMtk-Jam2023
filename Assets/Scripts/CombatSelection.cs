@@ -47,17 +47,4 @@ public class CombatSelection : MonoBehaviour
         Debug.Log("Block Button Pressed");
     }
 
-
-    public void setHealthSlider(int value, Slider slider)
-    {
-        slider.value = value;
-    }
-
-    private void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Alpha0)) {
-        //    setHealthSlider(0, monsterHealthSlider);
-        //}
-    }
-
 }

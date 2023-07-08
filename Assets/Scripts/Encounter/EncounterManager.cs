@@ -27,6 +27,8 @@ public class EncounterManager : MonoBehaviour
     enum TurnOwner { Hero, Monster }
     TurnOwner turnOwner = TurnOwner.Hero;
 
+    bool IsActing => hero.IsActing || monster.IsActing;
+
     private void Awake()
     {
         monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
@@ -39,17 +41,18 @@ public class EncounterManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(_TestFight());
+        //StartCoroutine(_TestFight());
     }
 
-    IEnumerator _AsyncFight()
+    private void Update()
     {
-        while (true)
-        {
-            if (!hero.IsActing && !monster.IsActing)
-            {
+        combatInput.SetInteractable(!IsActing && !monster.IsCoolingDown);
 
-            }
+        if (IsActing) return;
+
+        if (!hero.IsCoolingDown)
+        {
+            hero.SimpleAttack();
         }
     }
 

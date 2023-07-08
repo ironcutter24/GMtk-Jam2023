@@ -131,4 +131,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   attackDamage: 2
-  maxHealth: 10
+  attackEventPath:
+    Guid:
+      Data1: 134426441
+      Data2: 1155616921
+      Data3: -1703588430
+      Data4: 1468857699
+    Path: event:/Hero/Hero_Attack
+  hurtEventPath:
+    Guid:
+      Data1: 318422247
+      Data2: 1103211585
+      Data3: 1295283117
+      Data4: -2138167468
+    Path: event:/Hero/Hero_Hit
+  specialEventPath:
+    Guid:
+      Data1: -1164548580
+      Data2: 1225907226
+      Data3: 746793896
+      Data4: 2077812686
+    Path: event:/Hero/Hero_Special
