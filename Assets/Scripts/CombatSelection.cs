@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class CombatSelection : MonoBehaviour
 
     [SerializeField]
     private List<Button> buttons;
+
+    public Button specialButtonA;
+    public Button specialButtonB;
 
     private void Awake()
     {
@@ -26,38 +30,26 @@ public class CombatSelection : MonoBehaviour
 
     public void Attack()
     {
-        SetInteractable(false);
-
         Debug.Log("Attack Button Pressed");
         monster.SimpleAttack();
     }
 
-    public void Special()
-    {
-        Debug.Log("Special Button pressed");
-    }
-
-    public void Heal()
-    {
-        Debug.Log("Heal Button Pressed");
-    }
-
     public void Block()
     {
-        Debug.Log("Block Button Pressed");
+        Debug.Log("Block Button pressed");
+        monster.Block();
     }
 
-
-    public void setHealthSlider(int value, Slider slider)
+    public void SpecialA()
     {
-        slider.value = value;
+        Debug.Log("Special (A) Button Pressed");
+        monster.SpecialAttackA();
     }
 
-    private void Update()
+    public void SpecialB()
     {
-        //if (Input.GetKeyDown(KeyCode.Alpha0)) {
-        //    setHealthSlider(0, monsterHealthSlider);
-        //}
+        Debug.Log("Special (B) Button Pressed");
+        monster.SpecialAttackB();
     }
 
 }

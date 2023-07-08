@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8489045709110053518}
   - component: {fileID: 4300869743774583596}
+  - component: {fileID: 350871635630329907}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4ba0bb7c699bb5c49bd8a662b98ae745, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &350871635630329907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255343941686910115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e86742a7cb39be4fac0ac44a96d239d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8636238502841503335
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,5 +143,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  specialAttackA: 0
+  specialAttackB: 0
   attackDamage: 1
-  maxHealth: 10
+  attackEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  hurtEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  specialEventPath:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
