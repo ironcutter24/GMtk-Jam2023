@@ -28,6 +28,9 @@ public abstract class Fighter : MonoBehaviour
     [FMODUnity.EventRef]
     public string hurtEventPath;
 
+    [FMODUnity.EventRef]
+    public string specialEventPath;
+
     //[SerializeField]
     //protected float attackCoolDown = 3f;
     //protected bool onCoolDown = false;
@@ -60,21 +63,25 @@ public abstract class Fighter : MonoBehaviour
 
         Vector3 targetPos = Opponent.transform.position;
         MoveToEnemy(startPos, targetPos, .1f,
-            () => Opponent.TakeDamage(attackDamage, Opponent.hurtEventPath),
+            () => Opponent.TakeDamage(attackDamage),
             () => IsActing = false);
         FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }
 
-    public void TakeDamage(int damage, string hurtSound)
+    public void TakeDamage(int damage
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
-        FMODUnity.RuntimeManager.PlayOneShot(hurtSound, gameObject.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
 
         if (Health <= 0)
         {
             // Death
         }
+    }
+
+    public void SpecialAttack() {
+        FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
     }
 
     protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
