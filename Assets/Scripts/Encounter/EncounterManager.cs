@@ -58,10 +58,14 @@ public class EncounterManager : MonoBehaviour
 
     public void SetSpecialAttacksUI(Fighter.SpecialAttacks A, Fighter.SpecialAttacks B)
     {
-        combatInput.specialButtonA.GetComponentInChildren<TextMeshProUGUI>().text = A.ToString();
+        SetButton(combatInput.specialButtonA, A);
+        SetButton(combatInput.specialButtonB, B);
 
-        combatInput.specialButtonB.GetComponentInChildren<TextMeshProUGUI>().text = B.ToString();
-        combatInput.specialButtonB.gameObject.SetActive(B != Fighter.SpecialAttacks.None);
+        void SetButton(Button button, Fighter.SpecialAttacks attackType)
+        {
+            button.GetComponentInChildren<TextMeshProUGUI>().text = attackType.ToString();
+            button.gameObject.SetActive(attackType != Fighter.SpecialAttacks.None);
+        }
     }
 
     IEnumerator _TestFight()

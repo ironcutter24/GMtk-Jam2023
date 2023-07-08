@@ -1,436 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8180219687618791350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638244334771222490
-  FileSizes:
-  - Name: Desktop
-    Value: 235840
-  Exists: 1
---- !u!114 &-6840755617192240621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: event:/Hero/Hero_Attack
-  Guid:
-    Data1: 134426441
-    Data2: 1155616921
-    Data3: -1703588430
-    Data4: 1468857699
-  Banks:
-  - {fileID: -4662118793665963932}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7730605933436570106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HealthPickup
-  m_EditorClassIdentifier: 
-  Path: event:/HealthPickup
-  Guid:
-    Data1: 357104689
-    Data2: 1140535105
-    Data3: 566866836
-    Data4: 2073863165
-  Banks:
-  - {fileID: -4662118793665963932}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6708362066837021634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Fog/Fog_Special
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Fog/Fog_Special
-  Guid:
-    Data1: -1935437923
-    Data2: 1273460492
-    Data3: -142869869
-    Data4: -2017912473
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2981955112847436296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BackgroundMusic
-  m_EditorClassIdentifier: 
-  Path: event:/BackgroundMusic
-  Guid:
-    Data1: -1681092009
-    Data2: 1199236797
-    Data3: -1266251117
-    Data4: -469778883
-  Banks:
-  - {fileID: -6840755617192240621}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 6954911668531712075}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 58200
---- !u!114 &-2450043330845236497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Hero/Hero_Attack
-  m_EditorClassIdentifier: 
-  Name: CurrentScreen
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 353949603
-    data2: 1471995180
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Map
-  - Combat
-  Exists: 1
---- !u!114 &-5788661579447831217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Fog/Fog_Hit
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Fog/Fog_Hit
-  Guid:
-    Data1: -851068162
-    Data2: 1262910011
-    Data3: 942561932
-    Data4: -989901071
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2226239043904484469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Slime/Slime_Attack
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638244220468347594
-  FileSizes:
-  - Name: Desktop
-    Value: 430912
-  Exists: 1
---- !u!114 &-4303620635728426472
-  Path: event:/Monsters/Slime/Slime_Attack
-  Guid:
-    Data1: 1627571150
-    Data2: 1091965304
-    Data3: 1469262519
-    Data4: -1189252957
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1933634785331980818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638244220463232832
-  FileSizes:
-  - Name: Desktop
-    Value: 1600
-  Exists: 1
---- !u!114 &-1337103814021924458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Fog/Fog_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Fog/Fog_Attack
-  Guid:
-    Data1: -1828826620
-    Data2: 1078570270
-    Data3: 1467786651
-    Data4: -2089867733
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-847134102608290709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Hero/Hero_Special
-  m_EditorClassIdentifier: 
-  Path: event:/Hero/Hero_Special
-  Guid:
-    Data1: -1164548580
-    Data2: 1225907226
-    Data3: 746793896
-    Data4: 2077812686
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -1933634785331980818}
-  - {fileID: 1916624518320660569}
-  - {fileID: -6840755617192240621}
-  - {fileID: -8180219687618791350}
-  EditorEvents:
-  - {fileID: -2981955112847436296}
-  - {fileID: -1337103814021924458}
-  - {fileID: 450760798254072693}
-  - {fileID: 1980130374491658487}
-  - {fileID: -847134102608290709}
-  - {fileID: 524529352628070643}
-  - {fileID: 3914912234851132695}
-  - {fileID: 5935277891385911543}
-  - {fileID: -2450043330845236497}
-  - {fileID: 8175248125320350047}
-  - {fileID: -3328313805394440592}
-  - {fileID: -2226239043904484469}
-  - {fileID: 4238846886955624060}
-  - {fileID: 2926387410554876081}
-  - {fileID: 8668884733640598177}
-  - {fileID: -2399901978984387093}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 1916624518320660569}
-  StringsBanks:
-  - {fileID: -1933634785331980818}
-  cacheTime: 638244358585171363
-  cacheVersion: 131603
---- !u!114 &450760798254072693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Giant/Giant_Attack
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Giant/Giant_Attack
-  Guid:
-    Data1: 1995408901
-    Data2: 1206684252
-    Data3: -1049235838
-    Data4: 115317765
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -8516403954840797874}
-  - {fileID: -4303620635728426472}
-  - {fileID: 8386990579745653856}
-  - {fileID: -4662118793665963932}
-  EditorEvents:
-  - {fileID: -6449266204800256535}
-  - {fileID: -1761849730786912068}
-  - {fileID: -280025366689005299}
-  - {fileID: -575218321652596394}
-  - {fileID: 300989821409220639}
-  - {fileID: 1059786931057063785}
-  - {fileID: -5788661579447831217}
-  - {fileID: 1593824428704469345}
-  - {fileID: -7968536650265832846}
-  - {fileID: -3650795611443052797}
-  - {fileID: 3396090054469702112}
-  - {fileID: 2361815694071631918}
-  - {fileID: 1616761139587003235}
-  - {fileID: 6347084888531940745}
-  - {fileID: -6708362066837021634}
-  - {fileID: 213067878941158857}
-  - {fileID: -7730605933436570106}
-  - {fileID: 7215445731225872829}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -4303620635728426472}
-  StringsBanks:
-  - {fileID: -8516403954840797874}
-  cacheTime: 638244220468347594
-  cacheVersion: 131603
---- !u!114 &213067878941158857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Giant/Giant_Hit
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Giant/Giant_Hit
-  Guid:
-    Data1: 1747812394
-    Data2: 1216788495
-    Data3: 202434439
-    Data4: -2006693066
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1916624518320660569
+--- !u!114 &-8393299237459080448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,7 +20,62 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
---- !u!114 &1980130374491658487
+--- !u!114 &-8012684638806322420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic
+  Guid:
+    Data1: -1681092009
+    Data2: 1199236797
+    Data3: -1266251117
+    Data4: -469778883
+  Banks:
+  - {fileID: 6161104015949701279}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1842062854976397089}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 58200
+--- !u!114 &-7412713569774281186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Giant/Giant_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Giant/Giant_Hit
+  Guid:
+    Data1: 1747812394
+    Data2: 1216788495
+    Data3: 202434439
+    Data4: -2006693066
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7104980588962487800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,7 +94,7 @@ MonoBehaviour:
     Data3: 325052032
     Data4: 1036503361
   Banks:
-  - {fileID: -8180219687618791350}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -477,7 +102,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2926387410554876081
+--- !u!114 &-6497368958541934831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,16 +112,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Icy/Icy_Attack
+  m_Name: event:/Monsters/Fog/Fog_Attack
   m_EditorClassIdentifier: 
-  Path: event:/Monsters/Icy/Icy_Attack
+  Path: event:/Monsters/Fog/Fog_Attack
   Guid:
-    Data1: 244115415
-    Data2: 1146724664
-    Data3: -1013113413
-    Data4: -1413557807
+    Data1: -1828826620
+    Data2: 1078570270
+    Data3: 1467786651
+    Data4: -2089867733
   Banks:
-  - {fileID: -8180219687618791350}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -504,61 +129,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3914912234851132695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Giant/Giant_Special
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Giant/Giant_Special
-  Guid:
-    Data1: -787946687
-    Data2: 1265548742
-    Data3: -564924503
-    Data4: 1879680286
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4238846886955624060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Slime/Slime_Hit
-  m_EditorClassIdentifier: 
-  Path: event:/Monsters/Slime/Slime_Hit
-  Guid:
-    Data1: 1369475798
-    Data2: 1096435039
-    Data3: 142520988
-    Data4: -787759026
-  Banks:
-  - {fileID: -8180219687618791350}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5935277891385911543
+--- !u!114 &-5367381100197716576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,7 +148,7 @@ MonoBehaviour:
     Data3: -199059527
     Data4: -1856689537
   Banks:
-  - {fileID: -8180219687618791350}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -585,33 +156,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6954911668531712075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BackgroundMusic/CurrentScreen
-  m_EditorClassIdentifier: 
-  Name: CurrentScreen
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 353949603
-    data2: 1471995180
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Map
-  - Combat
-  Exists: 1
---- !u!114 &8175248125320350047
+--- !u!114 &-2281486637353877459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -621,16 +166,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monsters/Icy/Icy_Hit
+  m_Name: event:/Monsters/Slime/Slime_Hit
   m_EditorClassIdentifier: 
-  Path: event:/Monsters/Icy/Icy_Hit
+  Path: event:/Monsters/Slime/Slime_Hit
   Guid:
-    Data1: 1023668082
-    Data2: 1224461140
-    Data3: 1499309241
-    Data4: -1379715385
+    Data1: 1369475798
+    Data2: 1096435039
+    Data3: 142520988
+    Data4: -787759026
   Banks:
-  - {fileID: -8180219687618791350}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -638,7 +183,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8668884733640598177
+--- !u!114 &-770517642887761450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Giant/Giant_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Giant/Giant_Attack
+  Guid:
+    Data1: 1995408901
+    Data2: 1206684252
+    Data3: -1049235838
+    Data4: 115317765
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-280953070434008504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hero/Hero_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Hero/Hero_Attack
+  Guid:
+    Data1: 134426441
+    Data2: 1155616921
+    Data3: -1703588430
+    Data4: 1468857699
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-155548072433434705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,7 +256,7 @@ MonoBehaviour:
     Data3: 1295283117
     Data4: -2138167468
   Banks:
-  - {fileID: -8180219687618791350}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -665,7 +264,204 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7215445731225872829
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4694419363543361564}
+  - {fileID: -8393299237459080448}
+  - {fileID: 6161104015949701279}
+  - {fileID: 3325211650041346510}
+  EditorEvents:
+  - {fileID: -8012684638806322420}
+  - {fileID: -6497368958541934831}
+  - {fileID: -770517642887761450}
+  - {fileID: -7104980588962487800}
+  - {fileID: 5825604035246816620}
+  - {fileID: -7412713569774281186}
+  - {fileID: 1363682148881745002}
+  - {fileID: 2202618335180767670}
+  - {fileID: -5367381100197716576}
+  - {fileID: -280953070434008504}
+  - {fileID: 4733927578897855115}
+  - {fileID: 8791557355257173695}
+  - {fileID: 4201876115266954236}
+  - {fileID: 1187076848135521721}
+  - {fileID: -2281486637353877459}
+  - {fileID: 3184507257857155885}
+  - {fileID: -155548072433434705}
+  - {fileID: 6748768269388764201}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8393299237459080448}
+  StringsBanks:
+  - {fileID: 4694419363543361564}
+  cacheTime: 638244477681670048
+  cacheVersion: 131603
+--- !u!114 &1187076848135521721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Slime/Slime_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Slime/Slime_Attack
+  Guid:
+    Data1: 1627571150
+    Data2: 1091965304
+    Data3: 1469262519
+    Data4: -1189252957
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1363682148881745002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HealthPickup
+  m_EditorClassIdentifier: 
+  Path: event:/HealthPickup
+  Guid:
+    Data1: 357104689
+    Data2: 1140535105
+    Data3: 566866836
+    Data4: 2073863165
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1842062854976397089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BackgroundMusic/CurrentScreen
+  m_EditorClassIdentifier: 
+  Name: CurrentScreen
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 353949603
+    data2: 1471995180
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Map
+  - Combat
+  Exists: 1
+--- !u!114 &2202618335180767670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Giant/Giant_Special
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Giant/Giant_Special
+  Guid:
+    Data1: -787946687
+    Data2: 1265548742
+    Data3: -564924503
+    Data4: 1879680286
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3184507257857155885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Icy/Icy_Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Icy/Icy_Attack
+  Guid:
+    Data1: 244115415
+    Data2: 1146724664
+    Data3: -1013113413
+    Data4: -1413557807
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3325211650041346510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638244477681670048
+  FileSizes:
+  - Name: Desktop
+    Value: 430912
+  Exists: 1
+--- !u!114 &4201876115266954236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -684,7 +480,7 @@ MonoBehaviour:
     Data3: 1084547730
     Data4: 221644674
   Banks:
-  - {fileID: -4662118793665963932}
+  - {fileID: 3325211650041346510}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -692,7 +488,81 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8386990579745653856
+--- !u!114 &4694419363543361564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638244477681579960
+  FileSizes:
+  - Name: Desktop
+    Value: 1692
+  Exists: 1
+--- !u!114 &4733927578897855115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Icy/Icy_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Icy/Icy_Hit
+  Guid:
+    Data1: 1023668082
+    Data2: 1224461140
+    Data3: 1499309241
+    Data4: -1379715385
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5825604035246816620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hero/Hero_Special
+  m_EditorClassIdentifier: 
+  Path: event:/Hero/Hero_Special
+  Guid:
+    Data1: -1164548580
+    Data2: 1225907226
+    Data3: 746793896
+    Data4: 2077812686
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6161104015949701279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,8 +577,62 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244220465424080
+  lastModified: 638244477681655032
   FileSizes:
   - Name: Desktop
     Value: 1358560
   Exists: 1
+--- !u!114 &6748768269388764201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Fog/Fog_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Fog/Fog_Hit
+  Guid:
+    Data1: -851068162
+    Data2: 1262910011
+    Data3: 942561932
+    Data4: -989901071
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8791557355257173695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monsters/Fog/Fog_Special
+  m_EditorClassIdentifier: 
+  Path: event:/Monsters/Fog/Fog_Special
+  Guid:
+    Data1: -1935437923
+    Data2: 1273460492
+    Data3: -142869869
+    Data4: -2017912473
+  Banks:
+  - {fileID: 3325211650041346510}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
