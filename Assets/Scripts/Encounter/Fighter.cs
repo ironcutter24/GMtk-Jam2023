@@ -38,7 +38,7 @@ public abstract class Fighter : MonoBehaviour
 	//public float coolDownRemaining;
 
 	protected const int maxHealth = 10;
-	protected int Health { get; private set; }
+	public int Health { get; private set; }
 
 
 
@@ -77,7 +77,7 @@ public abstract class Fighter : MonoBehaviour
 		FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
 	}
 
-	public void TakeDamage(int damage
+	public void TakeDamage(int damage)
 	{
 		Health = Mathf.Max(0, Health - damage);
 		healthBar.value = Health / (float)maxHealth;
@@ -87,6 +87,8 @@ public abstract class Fighter : MonoBehaviour
 			
 		FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
 	}
+
+	protected abstract void Death();
 
 	public void SpecialAttack() {
 		FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
