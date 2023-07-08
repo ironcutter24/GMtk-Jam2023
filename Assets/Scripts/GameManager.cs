@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
             Application.Quit();
         }
 
-        Debug.Log("Hero health: " + hero.Health);
+        //Debug.Log("Hero health: " + hero.Health);
     }
 
     public void LoadBattleWith(Monster opponent)
