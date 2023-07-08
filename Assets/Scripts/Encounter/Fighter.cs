@@ -13,10 +13,10 @@ public abstract class Fighter : MonoBehaviour
     protected EncounterManager encounterManager;
 
     [SerializeField]
-    Slider healthBar;
+    protected Slider healthBar;
 
     [SerializeField]
-    int attackDamage = 1;
+    protected int attackDamage = 1;
 
     protected const int maxHealth = 10;
     protected int Health { get; private set; }
@@ -25,7 +25,8 @@ public abstract class Fighter : MonoBehaviour
     protected Vector3 startPos { get; private set; }
     public bool IsActing { get; protected set; }
 
-    protected virtual void Start()
+
+    private void Awake()
     {
         Health = maxHealth;
         startPos = transform.position;

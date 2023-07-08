@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CombatSelection : MonoBehaviour
 {
-
     public Monster monster;
     public Slider monsterHealthSlider;
     public Slider heroHealthSlider;
@@ -13,6 +12,10 @@ public class CombatSelection : MonoBehaviour
     [SerializeField]
     private List<Button> buttons;
 
+    private void Awake()
+    {
+        SetInteractable(false);
+    }
 
     public void SetInteractable(bool state)
     {
@@ -23,6 +26,8 @@ public class CombatSelection : MonoBehaviour
 
     public void Attack()
     {
+        SetInteractable(false);
+
         Debug.Log("Attack Button Pressed");
         monster.SimpleAttack();
     }

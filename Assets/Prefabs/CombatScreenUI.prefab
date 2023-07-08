@@ -1414,6 +1414,11 @@ MonoBehaviour:
   monster: {fileID: 0}
   monsterHealthSlider: {fileID: 2219685434563234317}
   heroHealthSlider: {fileID: 2219685433585193084}
+  buttons:
+  - {fileID: 2219685434115248040}
+  - {fileID: 2219685434217867677}
+  - {fileID: 2219685433760355012}
+  - {fileID: 2219685433585128297}
 --- !u!1 &2219685434212139202
 GameObject:
   m_ObjectHideFlags: 0

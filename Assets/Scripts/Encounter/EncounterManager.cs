@@ -18,40 +18,58 @@ public class EncounterManager : MonoBehaviour
     Hero hero;
     public Fighter Hero => hero;
 
-    public Fighter Monster { get; private set; }
+    private Monster monster;
+    public Fighter Monster => monster;
 
     enum TurnOwner { Hero, Monster }
     TurnOwner turnOwner = TurnOwner.Hero;
 
     private void Awake()
     {
-        Monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
-        combatInput.monster = Monster as Monster;
-        Monster.SetManager(this);
-
+        monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
+        combatInput.monster = monster;
+        monster.SetHealthBar(monsterHealthBar);
+        monster.SetManager(this);
         hero.SetManager(this);
+    }
 
+    private void Start()
+    {
         StartCoroutine(_TestFight());
     }
 
     IEnumerator _TestFight()
     {
+        yield return new WaitForSeconds(1.2f);
+
         while (true)
         {
             if (turnOwner == TurnOwner.Monster)
             {
-                // Wait for player input
+                // Player turn
+                yield return _WaitForPlayerTurn();
 
                 turnOwner = TurnOwner.Hero;
             }
             else
             {
-                yield return new WaitForSeconds(.4f);
-
+                // AI turn
+                yield return hero._PerformAITurn();
                 turnOwner = TurnOwner.Monster;
             }
-
-            yield return null;
         }
+    }
+
+    IEnumerator _WaitForPlayerTurn()
+    {
+        Debug.Log("Started player turn");
+
+        combatInput.SetInteractable(true);
+        yield return new WaitUntil(() => monster.IsActing);
+
+        combatInput.SetInteractable(false);
+        yield return new WaitUntil(() => !monster.IsActing);
+
+        Debug.Log("Ended player turn");
     }
 }

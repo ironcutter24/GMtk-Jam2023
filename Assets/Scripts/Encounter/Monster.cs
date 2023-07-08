@@ -1,16 +1,16 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : Fighter
 {
     protected override Fighter Opponent => encounterManager.Hero;
 
-    protected override void Start()
+    public void SetHealthBar(Slider bar)
     {
-        base.Start();
-
-        //SimpleAttack();
+        healthBar = bar;
     }
 }
