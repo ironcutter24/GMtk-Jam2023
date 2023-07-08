@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{673ef074-33bf-4a18-a812-0a5dbd675356}">
 		<property name="assetPath">
-			<value>gurgles_1.wav</value>
+			<value>Effects/gurgles_1.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
