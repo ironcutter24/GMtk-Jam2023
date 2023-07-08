@@ -7,6 +7,11 @@ public class Hero : Fighter
 {
     protected override Fighter Opponent => encounterManager.Monster;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        Health = GameManager.Instance.Hero.Health;
+    }
 
     // Hero AI
 
@@ -25,5 +30,10 @@ public class Hero : Fighter
 
         yield return new WaitUntil(() => !IsActing);
         Debug.Log("Ended AI turn");
+    }
+
+    protected override void Death()
+    {
+        // To win screen
     }
 }

@@ -21,7 +21,13 @@ public class Monster : Fighter
         healthBar = bar;
     }
 
-    //public void SetCooldownBar(Slider bar) {
-    //    cooldownBar = bar;
-    //}
+
+    protected override void Death()
+    {
+        // To map scene
+
+        GameManager.Instance.Hero.SetHealth(Opponent.Health);
+        GameManager.Instance.LoadWorldMap();
+    }
+
 }

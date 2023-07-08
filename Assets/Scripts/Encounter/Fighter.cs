@@ -22,6 +22,7 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField]
     protected int attackDamage = 1;
 
+
     [FMODUnity.EventRef]
     public string attackEventPath;
 
@@ -37,11 +38,14 @@ public abstract class Fighter : MonoBehaviour
     protected int Health { get; private set; }
 
 
+
     protected Vector3 startPos { get; private set; }
     public bool IsActing { get; protected set; }
 
+    public bool IsDead => Health <= 0;
 
-    private void Awake()
+
+    protected virtual void Awake()
     {
         Health = maxHealth;
         startPos = transform.position;
@@ -69,13 +73,17 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
+
         FMODUnity.RuntimeManager.PlayOneShot(hurtSound, gameObject.transform.position);
 
         if (Health <= 0)
         {
             // Death
         }
+
     }
+
+    protected abstract void Death();
 
     protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
     {
