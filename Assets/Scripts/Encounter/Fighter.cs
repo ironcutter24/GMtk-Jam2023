@@ -105,11 +105,17 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
-        
+
+        if (IsBlocking)
+        {
+            // Play block sound
+
+            return;
+        }
+
         FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
         transform.DOShakePosition(.3f, .5f, 30);
-        //spriteRenderer.material.SetFloat("HITEFFECT_ON", 1f);
-
+        PlayHitVFX();
 
         if (Health <= 0)
             Death();
@@ -117,6 +123,16 @@ public abstract class Fighter : MonoBehaviour
 
     protected abstract void Death();
 
+    void PlayHitVFX()
+    {
+        var sequence = DOTween.Sequence();
+        sequence
+            .AppendCallback(() => SetHit(true))
+            .AppendInterval(.2f)
+            .AppendCallback(() => SetHit(false));
+
+        void SetHit(bool state) { spriteRenderer.material.SetFloat("_HitEffectBlend", state ? 1f : 0f); }
+    }
 
     protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
     {
@@ -145,9 +161,19 @@ public abstract class Fighter : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }
 
+    const float blockCooldown = .4f;
+    public bool IsBlocking { get; private set; } = false;
     public void Block()
     {
+        IsBlocking = true;
 
+        SetCooldown(blockCooldown);
+
+        DOTween.To(() => 0f, (x) => SetShineLocation(x), 1f, .9f)
+            .SetLoops(3, LoopType.Restart)
+            .OnComplete(() => IsBlocking = false);
+
+        void SetShineLocation(float val) { spriteRenderer.material.SetFloat("_ShineLocation", val); }
     }
 
     public void SpecialAttackA()
@@ -177,7 +203,7 @@ public abstract class Fighter : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot(specialEventPath, gameObject.transform.position);
 
-        switch (specialAttackA)
+        switch (specialAttackB)
         {
             case SpecialAttacks.Freeze:
                 SetCooldown(freezeCooldown);
@@ -221,15 +247,6 @@ public abstract class Fighter : MonoBehaviour
 
             IsPoisoned = false;
         }
-    }
-
-
-    const float blockCooldown = .4f;
-    Timer blockignTimer = new Timer();
-    public bool IsBlocking { get; private set; } = false;
-    public void ApplyBlocking()
-    {
-        blockignTimer.Set(1f);
     }
 
 }
