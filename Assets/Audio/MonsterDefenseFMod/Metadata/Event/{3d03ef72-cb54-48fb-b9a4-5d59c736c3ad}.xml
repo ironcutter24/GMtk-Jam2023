@@ -100,6 +100,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{022f01fa-1c94-437d-8edb-30f996e3fc85}" />
 	<object class="MultiSound" id="{fdf4eaca-df48-442f-802a-59086dc7487e}">
+		<property name="startOffset">
+			<value>7</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{976fcc64-8b43-4d41-a79e-b838c4d45c70}</destination>
 		</relationship>
