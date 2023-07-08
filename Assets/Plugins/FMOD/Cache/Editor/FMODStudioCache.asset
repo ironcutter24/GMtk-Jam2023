@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244135406861766
+  lastModified: 638244148977974137
   FileSizes:
   - Name: Desktop
     Value: 1600
@@ -118,7 +118,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 1
+  Default: 0
   ID:
     data1: 353949603
     data2: 1471995180
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638244135407490034
+  lastModified: 638244148980118637
   FileSizes:
   - Name: Desktop
     Value: 235840
@@ -190,7 +190,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244135406839766
+  lastModified: 638244148977959624
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -342,7 +342,7 @@ MonoBehaviour:
   - {fileID: -4303620635728426472}
   StringsBanks:
   - {fileID: -8516403954840797874}
-  cacheTime: 638244135407490034
+  cacheTime: 638244148980118637
   cacheVersion: 131603
 --- !u!114 &213067878941158857
 MonoBehaviour:
@@ -575,7 +575,7 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/FMODBuilds/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638244135407076575
+  lastModified: 638244148978304789
   FileSizes:
   - Name: Desktop
     Value: 1358560
