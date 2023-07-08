@@ -2,22 +2,33 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Fighter : MonoBehaviour
 {
-    protected const float attackMoveSpeed = 16f;
+    protected abstract Fighter Opponent { get; }
 
+    protected const float attackMoveSpeedIn = 42f;
+    protected const float attackMoveSpeedOut = 16f;
     protected EncounterManager encounterManager;
 
-    protected Vector3 startPos { get; private set; }
+    [SerializeField]
+    Slider healthBar;
 
+    [SerializeField]
+    int attackDamage = 1;
+
+    protected const int maxHealth = 10;
+    protected int Health { get; private set; }
+
+
+    protected Vector3 startPos { get; private set; }
     public bool IsActing { get; protected set; }
 
-    private void Start()
+    protected virtual void Start()
     {
+        Health = maxHealth;
         startPos = transform.position;
-
-        SimpleAttack();
     }
 
     public void SetManager(EncounterManager encounterManager)
@@ -25,16 +36,38 @@ public abstract class Fighter : MonoBehaviour
         this.encounterManager = encounterManager;
     }
 
-    public abstract void SimpleAttack();
-
-    protected void MoveToEnemy(Vector3 from, Vector3 to, float moveSpeed, float hitStop, System.Action callback)
+    public void SimpleAttack()
     {
-        float transitionTime = Vector2.Distance(from, to) / moveSpeed;
+        if (IsActing) return;
+
+        IsActing = true;
+
+        Vector3 targetPos = Opponent.transform.position;
+        MoveToEnemy(startPos, targetPos, .1f,
+            () => Opponent.TakeDamage(attackDamage),
+            () => IsActing = false);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health = Mathf.Max(0, Health - damage);
+        healthBar.value = Health / (float)maxHealth;
+
+        if (Health <= 0)
+        {
+            // Death
+        }
+    }
+
+    protected void MoveToEnemy(Vector3 from, Vector3 to, float hitStop, System.Action OnReach, System.Action OnComplete)
+    {
+        float dist = Vector2.Distance(from, to);
         Sequence attackTween = DOTween.Sequence();
         attackTween
-            .Append(transform.DOMove(to, transitionTime))
+            .Append(transform.DOMove(to, dist / attackMoveSpeedIn).SetEase(Ease.Linear))
+            .AppendCallback(() => OnReach())
             .AppendInterval(hitStop)
-            .Append(transform.DOMove(from, transitionTime))
-            .OnComplete(() => callback());
+            .Append(transform.DOMove(from, dist / attackMoveSpeedOut))
+            .OnComplete(() => OnComplete());
     }
 }

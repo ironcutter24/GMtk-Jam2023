@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Monster : Fighter
 {
-    public override void SimpleAttack()
-    {
-        IsActing = true;
+    protected override Fighter Opponent => encounterManager.Hero;
 
-        Vector3 targetPos = encounterManager.Hero.transform.position;
-        MoveToEnemy(startPos, targetPos, attackMoveSpeed, .05f,
-            () => IsActing = false);
+    protected override void Start()
+    {
+        base.Start();
+
+        //SimpleAttack();
     }
 }

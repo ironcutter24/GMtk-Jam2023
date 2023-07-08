@@ -6,6 +6,9 @@ using UnityEngine;
 public class HeroPawn : MonoBehaviour
 {
     [SerializeField]
+    SpriteRenderer graphics;
+
+    [SerializeField]
     float moveSpeed = 2f;
 
     bool isMoving = false;
@@ -27,11 +30,27 @@ public class HeroPawn : MonoBehaviour
             var combatLocation = GetCurrentLocation().GetComponent<CombatLocation>();
             if (combatLocation)
             {
+                PlayReadyAnimation();
+
+                while (true)
+                {
+                    yield return null;
+                    if (Input.GetKeyDown(KeyCode.Space))
+                        break;
+                }
+
                 GameManager.Instance.StoreHeroPosition(transform.position);
                 combatLocation.InitBattle();
                 yield break;
             }
         }
+    }
+
+    void PlayReadyAnimation()
+    {
+        graphics.transform.DOMoveY(.6f, .3f)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetRelative();
     }
 
     public void TryMove()
@@ -54,7 +73,7 @@ public class HeroPawn : MonoBehaviour
     private WorldLocation GetCurrentLocation()
     {
         var hits = Physics2D.OverlapCircleAll(transform.position, .1f);
-        
+
         foreach (var hit in hits)
         {
             var comp = hit.gameObject.GetComponent<WorldLocation>();

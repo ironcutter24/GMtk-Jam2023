@@ -24,7 +24,7 @@ public class WorldLocation : MonoBehaviour
             var toChild = child.transform.position - transform.position;
             path.transform.localPosition = toChild / 2f;
 
-            path.transform.rotation = Quaternion.Euler(0f, 0f, Vector2.SignedAngle(toChild, Vector2.right));
+            path.transform.rotation = Quaternion.Euler(0f, 0f, -Vector2.SignedAngle(toChild, Vector2.right));
 
             var targetScale = path.transform.localScale;
             targetScale.x = toChild.magnitude;
