@@ -14,7 +14,6 @@ public class MusicManager : Singleton<MusicManager>
         DontDestroyOnLoad(gameObject);
         musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvent.start();
-        musicEvent.setParameterByNameWithLabel("CurrentScreen", "Combat");
     }
 
     // Update is called once per frame
