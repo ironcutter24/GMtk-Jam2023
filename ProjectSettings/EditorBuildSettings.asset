@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Dam/WorldScene.unity
+    guid: b1c6181dc33786e4fa774c8f6f768c87
+  - enabled: 1
+    path: Assets/Scenes/Dam/CombatScene.unity
+    guid: 96401aae53905c149b389699c49e6130
   m_configObjects: {}

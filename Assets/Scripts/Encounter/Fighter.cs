@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public abstract class Fighter : MonoBehaviour
 
     protected Vector3 startPos { get; private set; }
 
-    public bool IsActing { get; private set; }
+    public bool IsActing { get; protected set; }
 
     private void Start()
     {
@@ -25,5 +26,15 @@ public abstract class Fighter : MonoBehaviour
     }
 
     public abstract void SimpleAttack();
-    public abstract void Block();
+
+    protected void MoveToEnemy(Vector3 from, Vector3 to, float moveSpeed, float hitStop, System.Action callback)
+    {
+        float transitionTime = Vector2.Distance(from, to) / moveSpeed;
+        Sequence attackTween = DOTween.Sequence();
+        attackTween
+            .Append(transform.DOMove(to, transitionTime))
+            .AppendInterval(hitStop)
+            .Append(transform.DOMove(from, transitionTime))
+            .OnComplete(() => callback());
+    }
 }

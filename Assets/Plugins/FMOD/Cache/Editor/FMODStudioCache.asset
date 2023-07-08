@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8890610998040027660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/squelch
+  m_EditorClassIdentifier: 
+  Path: event:/squelch
+  Guid:
+    Data1: 1369475798
+    Data2: 1096435039
+    Data3: 142520988
+    Data4: -787759026
+  Banks:
+  - {fileID: 5780219915987134841}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 730
 --- !u!114 &-7656724865649719779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,13 +64,14 @@ MonoBehaviour:
   - {fileID: 7309811483277826853}
   - {fileID: -7656724865649719779}
   - {fileID: 5780219915987134841}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -8890610998040027660}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7309811483277826853}
   StringsBanks:
   - {fileID: 5420323273742885648}
-  cacheTime: 638243692992494368
+  cacheTime: 638244061071983395
   cacheVersion: 131603
 --- !u!114 &5420323273742885648
 MonoBehaviour:
@@ -60,10 +88,10 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638243692992484362
+  lastModified: 638244061071978392
   FileSizes:
   - Name: Desktop
-    Value: 804
+    Value: 850
   Exists: 1
 --- !u!114 &5780219915987134841
 MonoBehaviour:
@@ -80,10 +108,10 @@ MonoBehaviour:
   Path: Assets/Audio/MonsterDefenseFMod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638243692992494368
+  lastModified: 638244061071983395
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 153248
   Exists: 1
 --- !u!114 &7309811483277826853
 MonoBehaviour:

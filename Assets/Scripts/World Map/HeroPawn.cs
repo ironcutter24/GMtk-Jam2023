@@ -24,7 +24,13 @@ public class HeroPawn : MonoBehaviour
             TryMove();
             yield return new WaitUntil(() => !isMoving);
 
-            
+            var combatLocation = GetCurrentLocation().GetComponent<CombatLocation>();
+            if (combatLocation)
+            {
+                GameManager.Instance.StoreHeroPosition(transform.position);
+                combatLocation.InitBattle();
+                yield break;
+            }
         }
     }
 
