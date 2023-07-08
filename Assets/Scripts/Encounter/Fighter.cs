@@ -31,9 +31,6 @@ public abstract class Fighter : MonoBehaviour
     protected SpecialAttacks specialAttackB = SpecialAttacks.None;
 
 
-    [SerializeField]
-    protected int attackDamage = 1;
-
     private float currentCooldown = 0f;
     private float cooldownTimer = 0f;
     public bool IsCoolingDown => cooldownTimer > 0f;
@@ -43,8 +40,28 @@ public abstract class Fighter : MonoBehaviour
     public EventReference hurtEventPath;
     public EventReference specialEventPath;
 
+    //Parameters that we can tweak on the individual fighters
+    [SerializeField]
+    protected int maxHealth = 10;
+    [SerializeField]
+    protected float attackCooldown = 3f;
+    [SerializeField]
+    protected int attackDamage = 1;
+    [SerializeField]
+    protected float healCooldown = .8f;
+    [SerializeField]
+    protected float freezeCooldown = .4f;
+    [SerializeField]
+    protected float poisonCooldown = .4f;
+    [SerializeField]
+    protected float freezeTime = 1f;
+    [SerializeField]
+    protected int poisonDamage = 1;
+    [SerializeField]
+    protected int poisonTurns = 3;
+    [SerializeField]
+    protected float poisonDelay = 1f;
 
-    protected const int maxHealth = 10;
     public int Health { get; protected set; }
 
 
@@ -132,8 +149,6 @@ public abstract class Fighter : MonoBehaviour
 
     public void SimpleAttack()
     {
-        const float attackCooldown = 3f;
-
         if (IsActing) return;
         IsActing = true;
 
@@ -169,9 +184,11 @@ public abstract class Fighter : MonoBehaviour
         {
             case SpecialAttacks.Freeze:
                 SetCooldown(freezeCooldown);
+                Opponent.ApplyFreeze();
                 break;
             case SpecialAttacks.Poison:
                 SetCooldown(poisonCooldown);
+                Opponent.ApplyPoison();
                 break;
             case SpecialAttacks.Block:
                 SetCooldown(blockCooldown);
@@ -190,9 +207,11 @@ public abstract class Fighter : MonoBehaviour
         {
             case SpecialAttacks.Freeze:
                 SetCooldown(freezeCooldown);
+                Opponent.ApplyFreeze();
                 break;
             case SpecialAttacks.Poison:
                 SetCooldown(poisonCooldown);
+                Opponent.ApplyPoison();
                 break;
             case SpecialAttacks.Block:
                 SetCooldown(blockCooldown);
@@ -203,20 +222,14 @@ public abstract class Fighter : MonoBehaviour
         }
     }
 
-
-    const float healCooldown = .8f;
-
-
-    const float freezeCooldown = .4f;
     Timer frozenTimer = new Timer();
     public bool IsFrozen => !frozenTimer.IsExpired;
     public void ApplyFreeze()
     {
-        frozenTimer.Set(1f);
+        frozenTimer.Set(freezeTime);
     }
 
 
-    const float poisonCooldown = .4f;
     public bool IsPoisoned { get; private set; } = false;
     public void ApplyPoison()
     {
@@ -226,10 +239,10 @@ public abstract class Fighter : MonoBehaviour
         {
             IsPoisoned = true;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < poisonTurns; i++)
             {
-                yield return new WaitForSeconds(1f);
-                TakeDamage(1);
+                yield return new WaitForSeconds(poisonDelay);
+                TakeDamage(poisonDamage);
             }
 
             IsPoisoned = false;

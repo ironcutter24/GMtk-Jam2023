@@ -27,6 +27,6 @@ public class Hero : Fighter
 
     protected override void Death()
     {
-        // To win screen
+        // TODO: To win screen
     }
 }
