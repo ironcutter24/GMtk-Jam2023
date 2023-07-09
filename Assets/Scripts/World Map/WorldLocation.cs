@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WorldLocation : MonoBehaviour
@@ -9,9 +8,23 @@ public class WorldLocation : MonoBehaviour
     GameObject pathSegmentPrefab;
 
     [SerializeField]
+    WorldLocation diversionChild;
+
+    [SerializeField]
     List<WorldLocation> children = new List<WorldLocation>();
 
-    public List<WorldLocation> Children => children;
+    public WorldLocation Parent { get; private set; }
+    public List<WorldLocation> Children
+    {
+        get
+        {
+            var _children = diversionChild ? new List<WorldLocation> { diversionChild } : children;
+            if (diversionChild)
+                diversionChild = null;
+
+            return _children;
+        }
+    }
 
     public Vector3 Pos => transform.position;
 
