@@ -2257,9 +2257,9 @@ Transform:
   - {fileID: 1909007722}
   - {fileID: 1222734494}
   - {fileID: 785780826}
-  - {fileID: 1270037735}
   - {fileID: 171749465}
   - {fileID: 1315412872}
+  - {fileID: 1270037735}
   - {fileID: 1172596409}
   - {fileID: 963880874}
   - {fileID: 1450335679}
@@ -2274,25 +2274,25 @@ Transform:
   - {fileID: 494250135}
   - {fileID: 551918473}
   - {fileID: 1210152581}
-  - {fileID: 988436689}
   - {fileID: 198362933}
   - {fileID: 2004441753}
   - {fileID: 449147428}
   - {fileID: 1437782091}
+  - {fileID: 988436689}
   - {fileID: 475271205}
   - {fileID: 1576552841}
   - {fileID: 1890585982}
   - {fileID: 666513111}
-  - {fileID: 1644717931}
   - {fileID: 103295567}
   - {fileID: 1402982221}
-  - {fileID: 1806024334}
   - {fileID: 352869047}
   - {fileID: 2130775756}
   - {fileID: 445246845}
   - {fileID: 1510590250}
+  - {fileID: 1644717931}
   - {fileID: 440158392}
   - {fileID: 1489314583}
+  - {fileID: 1806024334}
   - {fileID: 1692720115}
   - {fileID: 545540432}
   - {fileID: 499480945}
@@ -2312,13 +2312,13 @@ Transform:
   - {fileID: 1246807528}
   - {fileID: 790054128}
   - {fileID: 1815666279}
+  - {fileID: 1322250402}
   - {fileID: 1383000013}
   - {fileID: 1200899789}
-  - {fileID: 1322250402}
   - {fileID: 1509118966}
   - {fileID: 221961306}
-  - {fileID: 330677181}
   - {fileID: 1173540122}
+  - {fileID: 330677181}
   - {fileID: 1121642165}
   - {fileID: 991798190}
   - {fileID: 759592945}
@@ -6486,10 +6486,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
