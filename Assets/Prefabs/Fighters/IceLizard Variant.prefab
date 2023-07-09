@@ -139,6 +139,26 @@ PrefabInstance:
       propertyPath: specialEventPath.Guid.Data4
       value: 1036503361
       objectReference: {fileID: 0}
+    - target: {fileID: 4026533534625433773, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60614324
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026533534625433773, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3522184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026533534625433773, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.65529
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026533534625433773, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026533534625433773, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.86
+      objectReference: {fileID: 0}
     - target: {fileID: 4300869743774583596, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -51,7 +51,6 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField]
     protected int attackDamage = 1;
 
-
     [Header("Block")]
     [SerializeField]
     protected float blockCooldown = .4f;
@@ -158,6 +157,7 @@ public abstract class Fighter : MonoBehaviour
     {
         SetCooldown(healCooldown);
         Health = Mathf.Clamp(Health + healAmount, 0, maxHealth);
+        healthBar.value = Health / (float)maxHealth;
     }
 
     public void SpecialAttackA()

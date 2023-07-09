@@ -3424,7 +3424,7 @@ MonoBehaviour:
 
     You''ve
     gathered your most loyal minio...I mean subjects to defend your honor as the
-    Black Knight.
+    Red Knight.
 
     Can you stop this so-called "hero" before she lays waste to
     your entire domain?'
@@ -6188,7 +6188,7 @@ MonoBehaviour:
     a relentless warrior, so you''ll need to act quickly once your abilities come
     off of cool-down.
 
-    Think fast and stay strong! The future of the Black Knight''s
+    Think fast and stay strong! The future of the Red Knight''s
     realm is at stake!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -12574,7 +12574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And with that, the black knight drew his last breath, leaving his minions
+  m_text: And with that, the Red Knight drew his last breath, leaving his minions
     lost and directionless with no supreme overlord to guide them.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
