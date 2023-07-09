@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class IntroPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Start()
     {
-        if (GameManager.Instance.hasBegun)
-        {
-            gameObject.SetActive(false);
-        }
-        else {
-            Time.timeScale = 0;
-        }
+        gameObject.SetActive(!GameManager.Instance.hasBegun);
     }
 
-    public void BeginGame() {
+    bool flag = false;
+    public void BeginGame()
+    {
+        flag = true;
+    }
+
+    public IEnumerator _ShowIntro()
+    {
+        gameObject.SetActive(true);
+
+        yield return new WaitUntil(() => flag);
+
         GameManager.Instance.hasBegun = true;
-        Time.timeScale = 1;
         gameObject.SetActive(false);
     }
 }

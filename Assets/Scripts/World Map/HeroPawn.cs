@@ -14,6 +14,9 @@ public class HeroPawn : MonoBehaviour
     bool isMoving = false;
     public GameObject beginPanel;
 
+    [SerializeField]
+    private IntroPanel introPanel;
+
     private void Start()
     {
         transform.position = GameManager.Instance.Hero.MapPosition;
@@ -26,6 +29,12 @@ public class HeroPawn : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
+
+            if (!GameManager.Instance.hasBegun)
+            {
+                yield return introPanel._ShowIntro();
+                yield return new WaitForSeconds(1f);
+            }
 
             var currentLocation = GetCurrentLocation();
             if (currentLocation.Children.Count <= 0)

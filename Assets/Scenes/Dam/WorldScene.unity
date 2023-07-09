@@ -3378,6 +3378,10 @@ PrefabInstance:
       propertyPath: beginPanel
       value: 
       objectReference: {fileID: 743702493}
+    - target: {fileID: 5297555693405232541, guid: 5ec8a9c0c716b95468ebe4f44116bd96, type: 3}
+      propertyPath: introPanel
+      value: 
+      objectReference: {fileID: 1537458843}
     - target: {fileID: 5297555693405232542, guid: 5ec8a9c0c716b95468ebe4f44116bd96, type: 3}
       propertyPath: m_RootOrder
       value: 4
