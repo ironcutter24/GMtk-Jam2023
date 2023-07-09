@@ -40,14 +40,14 @@ public class EncounterManager : MonoBehaviour
     {
         monster = Instantiate(GameManager.Instance.CurrentOpponent, monsterStartPos.position, Quaternion.identity);
         combatInput.monster = monster;
-        monster.SetBars(monsterHealthBar, monsterCooldownBar, monsterHealthLabel);
+        monster.SetBars(monsterHealthBar, monsterCooldownBar, healthLabel);
         monster.SetManager(this);
         hero.SetManager(this);
     }
 
     private void Start()
     {
-
+        //StartCoroutine(_TestFight());
     }
 
     private void Update()

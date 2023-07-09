@@ -28,6 +28,7 @@ public class Monster : Fighter
     {
         GameManager.Instance.Hero.SetHealth(Opponent.Health);
         GameManager.Instance.LoadWorldMap();
+        Debug.Log("Monster Dead");
     }
 
 }

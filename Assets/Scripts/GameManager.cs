@@ -17,10 +17,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
-    [SerializeField]
-    protected TextMeshProUGUI healthLabel;
 
     public bool hasBegun = false;
+
 
     private void Start()
     {
@@ -50,6 +49,13 @@ public class GameManager : Singleton<GameManager>
     public void LoadWorldMap()
     {
         MusicManager.Instance.musicEvent.setParameterByNameWithLabel("CurrentScreen", "Map");
+        SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
+    }
+
+    public void RestartGame()
+    {
+        hasBegun = false;
+        //reset hero position
         SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
     }
 
@@ -88,8 +94,9 @@ public class GameManager : Singleton<GameManager>
 
         public void RestoreHealth(int val)
         {
-            health = Mathf.Clamp(health + val, 0, MaxHealth);
+            SetHealth(val);
             FMODUnity.RuntimeManager.PlayOneShot("event:/HealthPickup");
+
         }
 
         public void IncreaseAttackDamage(int amount)
@@ -102,5 +109,6 @@ public class GameManager : Singleton<GameManager>
         {
             mapPosition = pos;
         }
+
     }
 }

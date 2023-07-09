@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125653300}
   - component: {fileID: 125653301}
+  - component: {fileID: 125653302}
   m_Layer: 5
   m_Name: HeroHealthSlider
   m_TagString: Untagged
@@ -219,6 +220,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &125653302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125653299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab03b4472f414cd99e5dd223f88a273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269141486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,7 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a965fa1919da184785e74add6b254a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opponent: {fileID: 1603519884270811031, guid: 210fd0b1a6c3fdf47bfed113aaf08eb6, type: 3}
+  opponent: {fileID: 6428585002598680829, guid: 08831861826fd4f739a81ee0ac078efb, type: 3}
 --- !u!1 &1922778690
 GameObject:
   m_ObjectHideFlags: 0
