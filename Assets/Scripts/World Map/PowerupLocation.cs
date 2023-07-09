@@ -21,7 +21,6 @@ public abstract class PowerupLocation : MonoBehaviour
 
         IEnumerator _DisplayingPanel() {
             panel.SetActive(true);
-            Debug.Log("PanelSetActive");
             yield return new WaitForSeconds(2f);
             panel.SetActive(false);
         }

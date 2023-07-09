@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class Monster : Fighter
@@ -16,10 +17,11 @@ public class Monster : Fighter
         encounterManager.SetSpecialAttacksUI(specialAttackA, specialAttackB);
     }
 
-    public void SetBars(Slider health, Slider cooldown)
+    public void SetBars(Slider health, Slider cooldown, TextMeshProUGUI label)
     {
         healthBar = health;
         cooldownBar = cooldown;
+        healthLabel = label;
     }
 
     protected override void Death()

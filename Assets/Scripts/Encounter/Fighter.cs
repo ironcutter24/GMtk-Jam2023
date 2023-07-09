@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Utility.Time;
+using TMPro;
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public abstract class Fighter : MonoBehaviour
     [Header("Components")]
     [SerializeField]
     protected Slider healthBar;
+    [SerializeField]
+    protected TextMeshProUGUI healthLabel;
     [SerializeField]
     protected Slider cooldownBar;
 
@@ -91,6 +94,7 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = maxHealth;
         startPos = transform.position;
+        //healthLabel.SetText("HP: " + Health.ToString());
     }
 
     protected virtual void Start()
@@ -236,6 +240,7 @@ public abstract class Fighter : MonoBehaviour
     {
         Health = Mathf.Max(0, Health - damage);
         healthBar.value = Health / (float)maxHealth;
+        healthLabel.SetText("HP: " + Health.ToString());
 
         if (IsBlocking)
         {

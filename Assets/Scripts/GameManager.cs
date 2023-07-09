@@ -4,6 +4,8 @@ using FMODUnity;
 using UnityEngine;
 using Utility.Patterns;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,6 +17,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
+    [SerializeField]
+    protected TextMeshProUGUI healthLabel;
 
     public bool hasBegun = false;
 
@@ -63,6 +67,9 @@ public class GameManager : Singleton<GameManager>
         private int health;
         public int Health => health;
 
+        public Slider healthSlider;
+        public TextMeshProUGUI healthLabel;
+
         [SerializeField]
         private int attackDamage;
         public int AttackDamage => attackDamage;
@@ -75,6 +82,8 @@ public class GameManager : Singleton<GameManager>
         public void SetHealth(int val)
         {
             health = Mathf.Clamp(val, 0, MaxHealth);
+            healthSlider.value = Health;
+            healthLabel.SetText("HP: " + Health.ToString());
         }
 
         public void RestoreHealth(int val)
