@@ -14,13 +14,13 @@ public class HeroPawn : MonoBehaviour
     float moveSpeed = 2f;
 
     bool isMoving = false;
-    //public TextMeshProUGUI continueText;
+    public GameObject beginPanel;
 
     private void Start()
     {
         transform.position = GameManager.Instance.Hero.MapPosition;
         StartCoroutine(_TestPath());
-        //continueText.gameObject.SetActive(false);
+        beginPanel.SetActive(false);
     }
 
     IEnumerator _TestPath()
@@ -35,7 +35,7 @@ public class HeroPawn : MonoBehaviour
             if (combatLocation)
             {
                 PlayReadyAnimation();
-                //continueText.gameObject.SetActive(true);
+                beginPanel.SetActive(true);
                 while (true)
                 {
                     yield return null;
@@ -52,6 +52,7 @@ public class HeroPawn : MonoBehaviour
             if (powerupLocation)
             {
                 powerupLocation.UpdateHeroStatus();
+                powerupLocation.DisplayPanel();
             }
         }
     }

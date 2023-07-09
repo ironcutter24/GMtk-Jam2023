@@ -4,6 +4,8 @@ using FMODUnity;
 using UnityEngine;
 using Utility.Patterns;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -16,11 +18,16 @@ public class GameManager : Singleton<GameManager>
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
 
+    public bool hasBegun = false;
+
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        hasBegun = false;
     }
+
+
 
     private void Update()
     {
@@ -45,6 +52,13 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
     }
 
+    public void RestartGame()
+    {
+        hasBegun = false;
+        //reset hero position
+        SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
+    }
+
     [System.Serializable]
     public class HeroData
     {
@@ -59,6 +73,9 @@ public class GameManager : Singleton<GameManager>
         private int health;
         public int Health => health;
 
+        public Slider healthSlider;
+        public TextMeshProUGUI healthLabel;
+
         [SerializeField]
         private int attackDamage;
         public int AttackDamage => attackDamage;
@@ -71,12 +88,15 @@ public class GameManager : Singleton<GameManager>
         public void SetHealth(int val)
         {
             health = Mathf.Clamp(val, 0, MaxHealth);
+            healthSlider.value = Health;
+            healthLabel.SetText("HP: " + Health.ToString());
         }
 
         public void RestoreHealth(int val)
         {
-            health = Mathf.Clamp(health + val, 0, MaxHealth);
+            SetHealth(val);
             FMODUnity.RuntimeManager.PlayOneShot("event:/HealthPickup");
+
         }
 
         public void IncreaseAttackDamage(int amount)
@@ -89,5 +109,6 @@ public class GameManager : Singleton<GameManager>
         {
             mapPosition = pos;
         }
+
     }
 }
