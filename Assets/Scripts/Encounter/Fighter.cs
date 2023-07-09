@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utility.Time;
 using TMPro;
+using NUnit.Framework;
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -44,7 +45,6 @@ public abstract class Fighter : MonoBehaviour
 
 
     //Parameters that we can tweak on the individual fighters
-
     [Header("Attack")]
     [SerializeField]
     protected float attackCooldown = 3f;
@@ -222,22 +222,24 @@ public abstract class Fighter : MonoBehaviour
             {
                 yield return new WaitForSeconds(poisonDelay);
 
-                DOTween.To(() => 0f, (x) => SetDistorsion(x), .5f, .8f)
-                    .SetLoops(1, LoopType.Yoyo);
-
-                TakeDamage(poisonDamage);
+                Sequence attackTween = DOTween.Sequence();
+                attackTween
+                    .Append(DOTween.To(() => 0f, (x) => SetDistorsion(x), .5f, .1f))
+                    .AppendCallback(() => TakeDamage(poisonDamage, false))
+                    .AppendInterval(.2f)
+                    .Append(DOTween.To(() => 0f, (x) => SetDistorsion(x), 0f, .1f));
             }
 
             IsPoisoned = false;
         }
 
-        void SetDistorsion(float val) { spriteRenderer.material.SetFloat("_DistortAmoun", val); }
+        void SetDistorsion(float val) { spriteRenderer.material.SetFloat("_DistortAmount", val); }
     }
 
     #endregion
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool shake = true)
     {
 
         if (IsBlocking)
@@ -252,7 +254,10 @@ public abstract class Fighter : MonoBehaviour
         //healthLabel.SetText("HP: " + Health.ToString());
 
         FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
-        transform.DOShakePosition(.3f, .5f, 30);
+        if (shake)
+        {
+            transform.DOShakePosition(.3f, .5f, 30);
+        }
         PlayHitVFX();
 
         if (Health <= 0)
