@@ -178,11 +178,11 @@ public abstract class Fighter : MonoBehaviour
         {
             case SpecialAttacks.Freeze:
                 SetCooldown(freezeCooldown);
-                Opponent.ApplyFreeze();
+                Opponent.ApplyFreeze(freezeTime);
                 break;
             case SpecialAttacks.Poison:
                 SetCooldown(poisonCooldown);
-                Opponent.ApplyPoison();
+                Opponent.ApplyPoison(poisonDamage, poisonTurns, poisonDelay);
 
                 DOTween.To(() => 0f, (x) => spriteRenderer.material.SetFloat("_HsvShift", x), 360f, 1.2f);
 
@@ -203,14 +203,14 @@ public abstract class Fighter : MonoBehaviour
 
     Timer frozenTimer = new Timer();
     public bool IsFrozen => !frozenTimer.IsExpired;
-    public void ApplyFreeze()
+    public void ApplyFreeze(float duration)
     {
-        frozenTimer.Set(freezeTime);
+        frozenTimer.Set(duration);
     }
 
 
     public bool IsPoisoned { get; private set; } = false;
-    public void ApplyPoison()
+    public void ApplyPoison(int damage, int turns, float delay)
     {
         StartCoroutine(_PoisonStatus());
 
@@ -218,14 +218,14 @@ public abstract class Fighter : MonoBehaviour
         {
             IsPoisoned = true;
 
-            for (int i = 0; i < poisonTurns; i++)
+            for (int i = 0; i < turns; i++)
             {
-                yield return new WaitForSeconds(poisonDelay);
+                yield return new WaitForSeconds(delay);
 
                 Sequence attackTween = DOTween.Sequence();
                 attackTween
                     .Append(DOTween.To(() => 0f, (x) => SetDistorsion(x), .5f, .1f))
-                    .AppendCallback(() => TakeDamage(poisonDamage, false))
+                    .AppendCallback(() => TakeDamage(damage, false))
                     .AppendInterval(.2f)
                     .Append(DOTween.To(() => 0f, (x) => SetDistorsion(x), 0f, .1f));
             }
