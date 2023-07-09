@@ -238,9 +238,6 @@ public abstract class Fighter : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Health = Mathf.Max(0, Health - damage);
-        healthBar.value = Health / (float)maxHealth;
-        healthLabel.SetText("HP: " + Health.ToString());
 
         if (IsBlocking)
         {
@@ -248,6 +245,10 @@ public abstract class Fighter : MonoBehaviour
 
             return;
         }
+
+        Health = Mathf.Max(0, Health - damage);
+        healthBar.value = Health / (float)maxHealth;
+        healthLabel.SetText("HP: " + Health.ToString());
 
         FMODUnity.RuntimeManager.PlayOneShot(hurtEventPath, gameObject.transform.position);
         transform.DOShakePosition(.3f, .5f, 30);

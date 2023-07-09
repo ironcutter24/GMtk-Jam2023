@@ -6,11 +6,18 @@ using UnityEngine.UI;
 public class Hero : Fighter
 {
     protected override Fighter Opponent => encounterManager.Monster;
+    public GameObject victoryScreen;
 
     protected override void Awake()
     {
         base.Awake();
         Health = GameManager.Instance.Hero.Health;
+        if (Health > 0) {
+            victoryScreen.SetActive(false);
+        }
+        else {
+            Death();
+        }
     }
 
     // Hero AI
@@ -27,6 +34,7 @@ public class Hero : Fighter
 
     protected override void Death()
     {
-        // TODO: To win screen
+        Time.timeScale = 0;
+        victoryScreen.SetActive(true);
     }
 }
