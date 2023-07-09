@@ -22,6 +22,7 @@ public class IntroPanel : MonoBehaviour
         yield return new WaitUntil(() => flag);
 
         GameManager.Instance.hasBegun = true;
+        MusicManager.Instance.StartMusic();
         gameObject.SetActive(false);
     }
 }

@@ -9,7 +9,7 @@ public class MusicManager : Singleton<MusicManager>
     public FMOD.Studio.EventInstance musicEvent;
     public EventReference music;
 
-    void Start()
+    public void StartMusic()
     {
         musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvent.start();
