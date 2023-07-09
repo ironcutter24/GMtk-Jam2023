@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1385662870}
-  healingAmount: 20
+  healingAmount: 15
 --- !u!1001 &254095313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12536,7 +12536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 775295909}
-  upgradeAmount: 1
+  upgradeAmount: 2
 --- !u!1001 &2139082167
 PrefabInstance:
   m_ObjectHideFlags: 0

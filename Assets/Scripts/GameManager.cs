@@ -68,6 +68,8 @@ public class GameManager : Singleton<GameManager>
 
         [SerializeField]
         private int maxHealth = 10;
+        public int MaxHealth => maxHealth;
+
         public int Health { get; private set; }
         public float NormalizedHealth => Health / (float)maxHealth;
 

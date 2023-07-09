@@ -50,7 +50,7 @@ public abstract class Fighter : MonoBehaviour
     protected float attackCooldown = 3f;
     [SerializeField]
     protected int attackDamage = 1;
-    public virtual int AttackDamage => attackDamage;
+
 
     [Header("Block")]
     [SerializeField]
@@ -134,7 +134,7 @@ public abstract class Fighter : MonoBehaviour
 
         Vector3 targetPos = Opponent.transform.position;
         MoveToEnemy(startPos, targetPos, .1f,
-            () => Opponent.TakeDamage(AttackDamage),
+            () => Opponent.TakeDamage(attackDamage),
             () => IsActing = false);
         FMODUnity.RuntimeManager.PlayOneShot(attackEventPath, gameObject.transform.position);
     }

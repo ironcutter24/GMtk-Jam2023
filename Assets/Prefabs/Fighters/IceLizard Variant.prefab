@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: freezeTime
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: iconColor.b
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: freezeCooldown
-      value: 3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: specialAttackA

@@ -1,32 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Hero : Fighter
 {
     protected override Fighter Opponent => encounterManager.Monster;
-    public override int AttackDamage => GameManager.Instance.Hero.AttackDamage;
 
     public GameObject victoryScreen;
 
     protected override void Awake()
     {
         base.Awake();
-        Health = GameManager.Instance.Hero.Health;
         victoryScreen.SetActive(false);
-    }
 
-    // Hero AI
-
-    public IEnumerator _PerformAITurn()
-    {
-        Debug.Log("Started AI turn");
-
-        SimpleAttack();
-
-        yield return new WaitUntil(() => !IsActing);
-        Debug.Log("Ended AI turn");
+        Health = GameManager.Instance.Hero.Health;
+        maxHealth = GameManager.Instance.Hero.MaxHealth;
+        attackDamage = GameManager.Instance.Hero.AttackDamage;
     }
 
     protected override void Death()

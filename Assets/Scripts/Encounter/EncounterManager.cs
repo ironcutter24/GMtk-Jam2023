@@ -45,11 +45,6 @@ public class EncounterManager : MonoBehaviour
         hero.SetManager(this);
     }
 
-    private void Start()
-    {
-        //StartCoroutine(_TestFight());
-    }
-
     private void Update()
     {
         combatInput.SetInteractable(!IsActing && !monster.IsCoolingDown);
@@ -72,39 +67,5 @@ public class EncounterManager : MonoBehaviour
             button.GetComponentInChildren<TextMeshProUGUI>().text = attackType.ToString();
             button.gameObject.SetActive(attackType != Fighter.SpecialAttacks.None);
         }
-    }
-
-    IEnumerator _TestFight()
-    {
-        yield return new WaitForSeconds(1.2f);
-
-        while (true)
-        {
-            if (turnOwner == TurnOwner.Monster)
-            {
-                // Player turn
-                yield return _WaitForPlayerTurn();
-                turnOwner = TurnOwner.Hero;
-            }
-            else
-            {
-                // AI turn
-                yield return hero._PerformAITurn();
-                turnOwner = TurnOwner.Monster;
-            }
-        }
-    }
-
-    IEnumerator _WaitForPlayerTurn()
-    {
-        Debug.Log("Started player turn");
-
-        combatInput.SetInteractable(true);
-        yield return new WaitUntil(() => monster.IsActing);
-
-        combatInput.SetInteractable(false);
-        yield return new WaitUntil(() => !monster.IsActing);
-
-        Debug.Log("Ended player turn");
     }
 }
