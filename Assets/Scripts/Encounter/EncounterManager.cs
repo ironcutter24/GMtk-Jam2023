@@ -53,7 +53,14 @@ public class EncounterManager : MonoBehaviour
 
         if (!hero.IsCoolingDown)
         {
-            hero.SimpleAttack();
+            if (Random.Range(0f, 1f) < .8f)
+            {
+                hero.SimpleAttack();
+            }
+            else
+            {
+                hero.Block();
+            }
         }
     }
 

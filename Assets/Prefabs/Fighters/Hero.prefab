@@ -172,7 +172,7 @@ MonoBehaviour:
   specialAttackB: 0
   attackCooldown: 3
   attackDamage: 2
-  blockCooldown: 0.4
+  blockCooldown: 3
   healCooldown: 0.8
   healAmount: 5
   freezeCooldown: 0.4
