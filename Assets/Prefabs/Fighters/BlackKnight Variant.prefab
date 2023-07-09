@@ -56,6 +56,18 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: iconColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: iconColor.g
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: iconColor.r
+      value: 0.49803925
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
       propertyPath: attackDamage
       value: 3
       objectReference: {fileID: 0}

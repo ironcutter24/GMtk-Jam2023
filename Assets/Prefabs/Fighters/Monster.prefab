@@ -181,3 +181,5 @@ MonoBehaviour:
   poisonDamage: 1
   poisonTurns: 3
   poisonDelay: 1
+  iconSprite: {fileID: 21300000, guid: c09658acb40337541a94daa63a942cb2, type: 3}
+  iconColor: {r: 1, g: 1, b: 1, a: 1}

@@ -14,6 +14,8 @@ public class CombatLocation : MonoBehaviour
         {
             throw new NullReferenceException();
         }
+
+        GetComponent<WorldLocation>().SetIcon(opponent.IconSprite, opponent.IconColor);
     }
 
     public void InitBattle()

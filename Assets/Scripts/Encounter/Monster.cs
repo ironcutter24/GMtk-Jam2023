@@ -11,6 +11,15 @@ public class Monster : Fighter
 {
     protected override Fighter Opponent => encounterManager.Hero;
 
+    [Header("World Map")]
+    [SerializeField]
+    Sprite iconSprite;
+    public Sprite IconSprite => iconSprite;
+
+    [SerializeField]
+    Color iconColor = Color.white;
+    public Color IconColor => iconColor;
+
     protected override void Start()
     {
         base.Start();

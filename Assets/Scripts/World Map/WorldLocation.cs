@@ -5,6 +5,9 @@ using UnityEngine;
 public class WorldLocation : MonoBehaviour
 {
     [SerializeField]
+    SpriteRenderer iconRenderer;
+
+    [SerializeField]
     GameObject pathSegmentPrefab;
 
     [SerializeField]
@@ -38,6 +41,12 @@ public class WorldLocation : MonoBehaviour
     public void InvalidateDiversion()
     {
         diversionChild = null;
+    }
+
+    public void SetIcon(Sprite sprite, Color color = default)
+    {
+        iconRenderer.sprite = sprite;
+        iconRenderer.color = color;
     }
 
     private void OnDrawGizmos()
