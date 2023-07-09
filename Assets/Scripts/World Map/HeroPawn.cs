@@ -17,11 +17,15 @@ public class HeroPawn : MonoBehaviour
     [SerializeField]
     private IntroPanel introPanel;
 
+    [SerializeField]
+    private GameObject gameOverPanel;
+
     private void Start()
     {
         transform.position = GameManager.Instance.Hero.MapPosition;
         StartCoroutine(_ProgressPath());
         beginPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
     }
 
     IEnumerator _ProgressPath()
@@ -76,7 +80,7 @@ public class HeroPawn : MonoBehaviour
     IEnumerator _GameOver()
     {
         Debug.Log("Game Over");
-        // Display Game Over screen
+        gameOverPanel.SetActive(true);
 
         yield return new WaitUntil(() => Input.anyKeyDown);
 
