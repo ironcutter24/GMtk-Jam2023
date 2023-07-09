@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1705242686638735555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 118618405674329019, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: freezeTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialAttackA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Path
+      value: event:/Monsters/Icy/Icy_Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Path
+      value: event:/Monsters/Icy/Icy_Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Path
+      value: event:/Monsters/Icy/Icy_Special
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data1
+      value: 1023668082
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data2
+      value: 1224461140
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data3
+      value: 1499309241
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: hurtEventPath.Guid.Data4
+      value: -1379715385
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data1
+      value: 244115415
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data2
+      value: 1146724664
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data3
+      value: -1013113413
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: attackEventPath.Guid.Data4
+      value: -1413557807
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data1
+      value: -599251706
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data2
+      value: 1205032393
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data3
+      value: 325052032
+      objectReference: {fileID: 0}
+    - target: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: specialEventPath.Guid.Data4
+      value: 1036503361
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300869743774583596, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcd166139b2aa834081aaa4b3978b5e0, type: 3}
+    - target: {fileID: 8489045709110053518, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1174175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489045709110053518, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1174175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489045709110053518, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1174175
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489045709110053518, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636238502841503335, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
+      propertyPath: m_Name
+      value: TinyIceLizard Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
