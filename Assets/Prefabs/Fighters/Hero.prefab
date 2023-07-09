@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3426950367249768648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalScale: {x: -0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4557769634156404688}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4642931093a46ec40855534a2ea4fcfd, type: 3}
+  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,11 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5d4e8846df84248b6392612dc25805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  cooldownBar: {fileID: 0}
-  spriteRenderer: {fileID: 381358618086618951}
-  specialAttackA: 3
-  specialAttackB: 0
   attackEventPath:
     Guid:
       Data1: 134426441
@@ -168,13 +163,22 @@ MonoBehaviour:
       Data3: 746793896
       Data4: 2077812686
     Path: event:/Hero/Hero_Special
+  healthBar: {fileID: 0}
+  healthLabel: {fileID: 0}
+  cooldownBar: {fileID: 0}
+  spriteRenderer: {fileID: 381358618086618951}
   maxHealth: 10
+  specialAttackA: 3
+  specialAttackB: 0
   attackCooldown: 3
   attackDamage: 2
+  blockCooldown: 0.4
   healCooldown: 0.8
+  healAmount: 5
   freezeCooldown: 0.4
-  poisonCooldown: 0.4
   freezeTime: 1
+  poisonCooldown: 0.4
   poisonDamage: 1
   poisonTurns: 3
   poisonDelay: 1
+  victoryScreen: {fileID: 0}
