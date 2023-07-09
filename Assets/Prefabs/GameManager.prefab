@@ -46,12 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentOpponent: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
-  musicManager: {fileID: 0}
   hero:
-    mapPosition: {x: -7, y: 3}
-    MaxHealth: 10
-    health: 10
-    attackDamage: 0
+    startingMapPosition: {x: -7, y: 3}
+    maxHealth: 10
+    attackDamage: 2
+  hasBegun: 0
 --- !u!114 &66097535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,4 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abe70db9cd4d4b1cac2689e0da0ab0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: event:/BackgroundMusic
+  music:
+    Guid:
+      Data1: -1681092009
+      Data2: 1199236797
+      Data3: -1266251117
+      Data4: -469778883
+    Path: event:/BackgroundMusic

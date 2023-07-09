@@ -40,6 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2283600185
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Path
+    uniqueID: 848971537
+    locked: 0
+  - name: Pawn
+    uniqueID: 1716463305
     locked: 0

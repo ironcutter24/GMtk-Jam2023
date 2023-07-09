@@ -12,7 +12,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Monster currentOpponent;
     public Monster CurrentOpponent => currentOpponent;
-    public MusicManager musicManager;
+
 
     [SerializeField]
     private HeroData hero = new HeroData();
@@ -21,12 +21,15 @@ public class GameManager : Singleton<GameManager>
     public bool hasBegun = false;
 
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
+
         DontDestroyOnLoad(gameObject);
         hasBegun = false;
-    }
 
+        hero.Reset();
+    }
 
 
     private void Update()
@@ -63,40 +66,34 @@ public class GameManager : Singleton<GameManager>
     public class HeroData
     {
         [SerializeField]
-        private Vector2 mapPosition;
-        public Vector2 MapPosition => mapPosition;
+        private Vector2 startingMapPosition = Vector2.zero;
+        public Vector2 MapPosition { get; private set; }
 
         [SerializeField]
-        private int MaxHealth = 10;
-
-        [SerializeField]
-        private int health;
-        public int Health => health;
-
-        public Slider healthSlider;
-        public TextMeshProUGUI healthLabel;
+        private int maxHealth = 10;
+        public int Health { get; private set; }
+        public float NormalizedHealth => Health / (float)maxHealth;
 
         [SerializeField]
         private int attackDamage;
         public int AttackDamage => attackDamage;
 
-        public HeroData()
+
+        public void Reset()
         {
-            health = MaxHealth;
+            MapPosition = startingMapPosition;
+            Health = maxHealth;
         }
 
         public void SetHealth(int val)
         {
-            health = Mathf.Clamp(val, 0, MaxHealth);
-            healthSlider.value = Health;
-            healthLabel.SetText("HP: " + Health.ToString());
+            Health = Mathf.Clamp(val, 0, maxHealth);
         }
 
         public void RestoreHealth(int val)
         {
-            SetHealth(val);
+            SetHealth(Health + val);
             FMODUnity.RuntimeManager.PlayOneShot("event:/HealthPickup");
-
         }
 
         public void IncreaseAttackDamage(int amount)
@@ -107,7 +104,7 @@ public class GameManager : Singleton<GameManager>
 
         public void SetMapPosition(Vector2 pos)
         {
-            mapPosition = pos;
+            MapPosition = pos;
         }
 
     }
