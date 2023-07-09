@@ -49,7 +49,7 @@ MonoBehaviour:
   hero:
     startingMapPosition: {x: -7, y: 3}
     maxHealth: 10
-    attackDamage: 2
+    startingAttackDamage: 2
   hasBegun: 0
 --- !u!114 &66097535
 MonoBehaviour:

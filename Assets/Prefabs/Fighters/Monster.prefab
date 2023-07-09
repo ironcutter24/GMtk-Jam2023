@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1716463305
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,12 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5e45bf6dd915f4f819fc183dd9a794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  cooldownBar: {fileID: 0}
-  spriteRenderer: {fileID: 4300869743774583596}
-  specialAttackA: 0
-  specialAttackB: 0
-  attackDamage: 1
   attackEventPath:
     Guid:
       Data1: 0
@@ -169,3 +163,21 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  healthBar: {fileID: 0}
+  healthLabel: {fileID: 0}
+  cooldownBar: {fileID: 0}
+  spriteRenderer: {fileID: 4300869743774583596}
+  maxHealth: 10
+  specialAttackA: 0
+  specialAttackB: 0
+  attackCooldown: 3
+  attackDamage: 1
+  blockCooldown: 0.4
+  healCooldown: 0.8
+  healAmount: 5
+  freezeCooldown: 0.4
+  freezeTime: 1
+  poisonCooldown: 0.4
+  poisonDamage: 1
+  poisonTurns: 3
+  poisonDelay: 1

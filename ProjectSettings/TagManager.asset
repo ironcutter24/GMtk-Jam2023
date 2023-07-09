@@ -49,6 +49,9 @@ TagManager:
   - name: Path
     uniqueID: 848971537
     locked: 0
-  - name: Pawn
+  - name: Actors
     uniqueID: 1716463305
+    locked: 0
+  - name: Foreground
+    uniqueID: 76717049
     locked: 0

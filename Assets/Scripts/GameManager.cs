@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using FMODUnity;
 using UnityEngine;
 using Utility.Patterns;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -38,8 +35,6 @@ public class GameManager : Singleton<GameManager>
         {
             Application.Quit();
         }
-
-        //Debug.Log("Hero health: " + hero.Health);
     }
 
     public void LoadBattleWith(Monster opponent)
@@ -58,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     public void RestartGame()
     {
         hasBegun = false;
-        //reset hero position
+        hero.Reset();
         SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
     }
 
@@ -75,14 +70,15 @@ public class GameManager : Singleton<GameManager>
         public float NormalizedHealth => Health / (float)maxHealth;
 
         [SerializeField]
-        private int attackDamage;
-        public int AttackDamage => attackDamage;
+        private int startingAttackDamage = 1;
+        public int AttackDamage { get; private set; }
 
 
         public void Reset()
         {
             MapPosition = startingMapPosition;
             Health = maxHealth;
+            AttackDamage = startingAttackDamage;
         }
 
         public void SetHealth(int val)
@@ -98,7 +94,7 @@ public class GameManager : Singleton<GameManager>
 
         public void IncreaseAttackDamage(int amount)
         {
-            attackDamage += amount;
+            AttackDamage += amount;
             FMODUnity.RuntimeManager.PlayOneShot("event:/PowerUp");
         }
 

@@ -14,14 +14,7 @@ public class Hero : Fighter
     {
         base.Awake();
         Health = GameManager.Instance.Hero.Health;
-        if (Health > 0)
-        {
-            victoryScreen.SetActive(false);
-        }
-        else
-        {
-            Death();
-        }
+        victoryScreen.SetActive(false);
     }
 
     // Hero AI
