@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentOpponent: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
   hero:
-    startingMapPosition: {x: -7, y: 3}
-    maxHealth: 10
-    startingAttackDamage: 2
+    startingMapPosition: {x: -8, y: -1}
+    maxHealth: 20
+    startingAttackDamage: 4
   hasBegun: 0
 --- !u!114 &66097535
 MonoBehaviour:

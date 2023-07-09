@@ -48,6 +48,7 @@ public class HeroPawn : MonoBehaviour
             }
 
             TryMoveFrom(currentLocation);
+            currentLocation.InvalidateDiversion();
             yield return new WaitUntil(() => !isMoving);
 
             var combatLocation = GetCurrentLocation().GetComponent<CombatLocation>();

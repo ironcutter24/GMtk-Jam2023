@@ -14,17 +14,7 @@ public class WorldLocation : MonoBehaviour
     List<WorldLocation> children = new List<WorldLocation>();
 
     public WorldLocation Parent { get; private set; }
-    public List<WorldLocation> Children
-    {
-        get
-        {
-            var _children = diversionChild ? new List<WorldLocation> { diversionChild } : children;
-            if (diversionChild)
-                diversionChild = null;
-
-            return _children;
-        }
-    }
+    public List<WorldLocation> Children => diversionChild ? new List<WorldLocation> { diversionChild } : children;
 
     public Vector3 Pos => transform.position;
 
@@ -43,6 +33,11 @@ public class WorldLocation : MonoBehaviour
             targetScale.x = toChild.magnitude;
             path.transform.localScale = targetScale;
         }
+    }
+
+    public void InvalidateDiversion()
+    {
+        diversionChild = null;
     }
 
     private void OnDrawGizmos()
