@@ -48,7 +48,7 @@ MonoBehaviour:
   currentOpponent: {fileID: 138175517090379604, guid: 24190fefd51dc9a48b615894a48ee72b, type: 3}
   hero:
     startingMapPosition: {x: -8, y: -1}
-    maxHealth: 20
+    maxHealth: 30
     startingAttackDamage: 4
   hasBegun: 0
 --- !u!114 &66097535
