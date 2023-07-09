@@ -16,11 +16,15 @@ public class GameManager : Singleton<GameManager>
     private HeroData hero = new HeroData();
     public HeroData Hero => hero;
 
+    public bool hasBegun = false;
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+        hasBegun = false;
     }
+
+
 
     private void Update()
     {
