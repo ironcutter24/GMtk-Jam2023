@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     public HeroData Hero => hero;
 
     public bool hasBegun = false;
-
+    FMOD.Studio.Bus MasterBus;
 
     protected override void Awake()
     {
@@ -26,6 +26,8 @@ public class GameManager : Singleton<GameManager>
         hasBegun = false;
 
         hero.Reset();
+
+        MasterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
     }
 
 
@@ -54,6 +56,7 @@ public class GameManager : Singleton<GameManager>
     {
         hasBegun = false;
         hero.Reset();
+        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
     }
 
