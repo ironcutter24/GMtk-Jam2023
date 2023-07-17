@@ -47,8 +47,17 @@ public class GameManager : Singleton<GameManager>
 
     public void LoadWorldMap()
     {
-        MusicManager.Instance.musicEvent.setParameterByNameWithLabel("CurrentScreen", "Map");
-        SceneManager.LoadScene("WorldScene", LoadSceneMode.Single);
+        StartCoroutine(_LoadWorldMap());
+
+        IEnumerator _LoadWorldMap()
+        {
+            var sceneLoader = SceneManager.LoadSceneAsync("WorldScene", LoadSceneMode.Single);
+
+            yield return new WaitUntil(() => sceneLoader.progress > .98f);
+
+            sceneLoader.allowSceneActivation = true;
+            MusicManager.Instance.musicEvent.setParameterByNameWithLabel("CurrentScreen", "Map");
+        }
     }
 
     public void RestartGame()

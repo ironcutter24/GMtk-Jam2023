@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility.Time;
 
 public class EncounterManager : MonoBehaviour
 {
@@ -31,10 +32,9 @@ public class EncounterManager : MonoBehaviour
     private Monster monster;
     public Fighter Monster => monster;
 
-    enum TurnOwner { Hero, Monster }
-    TurnOwner turnOwner = TurnOwner.Hero;
-
     bool IsActing => hero.IsActing || monster.IsActing;
+
+    Timer heroStartTimer = new Timer();
 
     private void Awake()
     {
@@ -43,6 +43,8 @@ public class EncounterManager : MonoBehaviour
         monster.SetBars(monsterHealthBar, monsterCooldownBar, healthLabel);
         monster.SetManager(this);
         hero.SetManager(this);
+
+        heroStartTimer.Set(.4f);
     }
 
     private void Update()
@@ -51,7 +53,7 @@ public class EncounterManager : MonoBehaviour
 
         if (IsActing) return;
 
-        if (!hero.IsCoolingDown)
+        if (!hero.IsCoolingDown && heroStartTimer.IsExpired)
         {
             if (Random.Range(0f, 1f) < .8f)
             {
