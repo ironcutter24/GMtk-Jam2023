@@ -30,25 +30,25 @@ public class CombatSelection : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("Attack Button Pressed");
+        //Debug.Log("Attack Button Pressed");
         monster.SimpleAttack();
     }
 
     public void Block()
     {
-        Debug.Log("Block Button pressed");
+        //Debug.Log("Block Button pressed");
         monster.Block();
     }
 
     public void SpecialA()
     {
-        Debug.Log("Special (A) Button Pressed");
+        //Debug.Log("Special (A) Button Pressed");
         monster.SpecialAttackA();
     }
 
     public void SpecialB()
     {
-        Debug.Log("Special (B) Button Pressed");
+        //Debug.Log("Special (B) Button Pressed");
         monster.SpecialAttackB();
     }
 
